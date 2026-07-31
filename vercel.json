@@ -1,5 +1,5 @@
 {
   "framework": null,
-  "buildCommand": "pnpm run build",
-  "outputDirectory": "dist/client"
+  "buildCommand": "mkdir -p public/assets && cp -R assets/. public/assets/ && cp index.html public/index.html",
+  "outputDirectory": "public"
 }
