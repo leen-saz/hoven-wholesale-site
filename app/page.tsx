@@ -122,7 +122,7 @@ export default function Home() {
       <video autoPlay muted loop playsInline preload="auto"><source src="/video/hero.mp4" type="video/mp4" /></video><div className="veil" />
       <div className="center-copy hero-copy"><p className="eyebrow">{t.collection}</p><h1><Multiline>{t.hero}</Multiline></h1><p>{t.heroBody}</p><a className="round-link" href="#signature"><span>{t.explore}</span><b>↓</b></a></div>
     </section>
-    <section className="collection-intro"><p className="eyebrow">{t.label}</p><h2>{lang === "ar" ? <>المجموعة<br /><em>الأولى</em></> : <>Five mattresses,<br /><em>clearly considered.</em></>}</h2></section>
+    <section className="collection-intro"><p className="eyebrow">{t.label}</p><h2>{lang === "ar" ? <>المجموعة الأولى<br /><em>للمراتب</em></> : <>Five mattresses,<br /><em>clearly considered.</em></>}</h2></section>
     {[...mattresses].sort((a, b) => (a.id === "softness" ? -1 : b.id === "softness" ? 1 : 0)).map((m, index) => <section id={m.id} key={m.id} className={`mattress-stage ${active === m.id ? "is-active" : ""}`}>
       <div className="sticky-stage"><video autoPlay muted loop playsInline preload="auto"><source src={`/video/${m.video}.mp4`} type="video/mp4" /></video><div className="veil" />
         <div className="center-copy product-copy"><p className="eyebrow">{String(index + 1).padStart(2, "0")} / {m.name.en.toUpperCase()}</p><h2>{m.name[lang]}</h2><strong>{m.value[lang]}</strong></div>
