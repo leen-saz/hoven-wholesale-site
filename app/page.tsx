@@ -85,16 +85,16 @@ const mattresses = [
 
 const copy = {
   ar: {
-    collection: "مجموعة هوفن للمبيعات بالجملة · ٢٠٢٦", menu: "تواصل", switch: "EN", hero: "الراحة التي\nتستحقها المشاريع.",
-    heroBody: "مجموعة مراتب للفنادق، المشاريع السكنية، ومتاجر الأثاث التي تبحث عن جودة يمكن الوثوق بها.", explore: "اكتشف المجموعة",
-    layerTitle: "تفكيك المرتبة", layerHint: "تظهر المواصفات بعد اكتمال الحركة", height: "ارتفاع المرتبة", feel: "الإحساس", layersCount: "عدد الطبقات", benefits: "المزايا بعد اكتمال الطبقات",
+    collection: "منتجات هوفن قسم مبيعات الجملة", menu: "تواصل", switch: "EN", hero: "مزيج الجودة مع\nالسعر والموثوقية",
+    heroBody: "مجموعة مراتب للفنادق، والمشاريع السكنية، ومتاجر الأثاث التي تبحث عن جودة يمكن الوثوق بها.", explore: "اكتشف المجموعة",
+    layerTitle: "طبقات المرتبة", layerHint: "تظهر المواصفات بعد اكتمال الحركة", height: "ارتفاع المرتبة", feel: "الإحساس", layersCount: "عدد الطبقات", benefits: "المزايا بعد اكتمال الطبقات",
     wholesale: "مصمم للأعمال", wholesaleTitle: "شريك الراحة\nلمشروعك القادم.", wholesaleBody: "ضمان ٧ سنوات · توريد إلى جميع مناطق المملكة · مدة التجهيز ١٥ يومًا وتختلف حسب الكمية.",
     contact: "لنصنع راحة أفضل", contactTitle: "لنبدأ الحديث عن\nمشروعك القادم.", top: "للأعلى", label: "المجموعة",
   },
   en: {
     collection: "HOVEN WHOLESALE COLLECTION · 2026", menu: "Contact", switch: "ع", hero: "Comfort made\nfor your projects.",
     heroBody: "A mattress collection for hospitality, residences, and retail partners seeking quality they can rely on.", explore: "Explore collection",
-    layerTitle: "Mattress breakdown", layerHint: "Specifications reveal when the motion is complete", height: "Mattress height", feel: "Feel", layersCount: "Layer count", benefits: "Benefits revealed after every layer",
+    layerTitle: "Mattress layers", layerHint: "Specifications reveal when the motion is complete", height: "Mattress height", feel: "Feel", layersCount: "Layer count", benefits: "Benefits revealed after every layer",
     wholesale: "BUILT FOR BUSINESS", wholesaleTitle: "A comfort partner\nfor your next project.", wholesaleBody: "7-year warranty · Delivery across Saudi Arabia · 15-day preparation time, varying by order quantity.",
     contact: "LET'S BUILD BETTER REST", contactTitle: "Let's talk about\nyour next project.", top: "Back to top", label: "THE COLLECTION",
   },
@@ -122,8 +122,8 @@ export default function Home() {
       <video autoPlay muted loop playsInline preload="auto"><source src="/video/hero.mp4" type="video/mp4" /></video><div className="veil" />
       <div className="center-copy hero-copy"><p className="eyebrow">{t.collection}</p><h1><Multiline>{t.hero}</Multiline></h1><p>{t.heroBody}</p><a className="round-link" href="#signature"><span>{t.explore}</span><b>↓</b></a></div>
     </section>
-    <section className="collection-intro"><p className="eyebrow">{t.label}</p><h2>{lang === "ar" ? <>خمس مراتب،<br /><em>تفاصيل واضحة.</em></> : <>Five mattresses,<br /><em>clearly considered.</em></>}</h2></section>
-    {mattresses.map((m, index) => <section id={m.id} key={m.id} className={`mattress-stage ${active === m.id ? "is-active" : ""}`}>
+    <section className="collection-intro"><p className="eyebrow">{t.label}</p><h2>{lang === "ar" ? <>المجموعة<br /><em>الأولى</em></> : <>Five mattresses,<br /><em>clearly considered.</em></>}</h2></section>
+    {[...mattresses].sort((a, b) => (a.id === "softness" ? -1 : b.id === "softness" ? 1 : 0)).map((m, index) => <section id={m.id} key={m.id} className={`mattress-stage ${active === m.id ? "is-active" : ""}`}>
       <div className="sticky-stage"><video autoPlay muted loop playsInline preload="auto"><source src={`/video/${m.video}.mp4`} type="video/mp4" /></video><div className="veil" />
         <div className="center-copy product-copy"><p className="eyebrow">{String(index + 1).padStart(2, "0")} / {m.name.en.toUpperCase()}</p><h2>{m.name[lang]}</h2><strong>{m.value[lang]}</strong></div>
         <div className="product-details"><h3>{m.line[lang]}</h3><p>{m.intro[lang]}</p></div>
