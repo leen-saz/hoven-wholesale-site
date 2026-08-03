@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ProductCard from "@/app/components/ProductCard";
+import ContactForm from "@/app/components/ContactForm";
 
 type Lang = "ar" | "en";
 
 const mattresses = [
   {
-    id: "signature", video: "signature", height: "27 cm",
+    id: "signature", video: "signature", frameCount: 30, height: "27 cm",
     name: { ar: "سيقنتشر", en: "Signature" },
     value: { ar: "راحة راقية تُصمّم لتدوم.", en: "Refined comfort, designed to last." },
     feel: { ar: "متوازن", en: "Balanced" },
@@ -21,7 +23,7 @@ const mattresses = [
     highlights: { ar: ["راحة متوازنة", "تشطيب أنيق", "دعم ثابت"], en: ["Balanced comfort", "Elegant finish", "Steady support"] },
   },
   {
-    id: "softness", video: "softness", height: "28–29 cm",
+    id: "softness", video: "softness", frameCount: 30, height: "28–29 cm",
     name: { ar: "السوفتنس", en: "Softness" },
     value: { ar: "نعومة وطبقات راحة.", en: "Softness and comfort layers." },
     feel: { ar: "لين", en: "Soft" },
@@ -36,7 +38,7 @@ const mattresses = [
     highlights: { ar: ["نعومة استثنائية", "توزيع لطيف للضغط", "تهوية مريحة"], en: ["Exceptional softness", "Gentle pressure relief", "Comfortable airflow"] },
   },
   {
-    id: "prada", video: "prada", height: "27 cm",
+    id: "prada", video: "prada", frameCount: 30, height: "27 cm",
     name: { ar: "برادا", en: "Prada" },
     value: { ar: "Euro Top وتقليل انتقال الحركة.", en: "Euro Top with reduced motion transfer." },
     feel: { ar: "متوسط", en: "Medium" },
@@ -51,7 +53,7 @@ const mattresses = [
     highlights: { ar: ["دعم متوازن", "تصميم Euro Top", "حركة أقل بين النائمين"], en: ["Balanced support", "Euro Top design", "Reduced sleep-partner motion"] },
   },
   {
-    id: "grand", video: "grand", height: "29 cm",
+    id: "grand", video: "grand", frameCount: 30, height: "29 cm",
     name: { ar: "الجراند", en: "Grand" },
     value: { ar: "ارتفاع فاخر واستقرار يومي.", en: "Premium height and daily stability." },
     feel: { ar: "متوسط", en: "Medium" },
@@ -66,7 +68,7 @@ const mattresses = [
     highlights: { ar: ["ارتفاع فاخر", "استقرار يومي", "راحة ممتدة"], en: ["Premium height", "Daily stability", "Extended comfort"] },
   },
   {
-    id: "classic", video: "classic", height: "25 cm",
+    id: "classic", video: "classic", frameCount: 30, height: "25 cm",
     name: { ar: "الكلاسيك", en: "Classic" },
     value: { ar: "دبل فيس: جهة لينة وجهة متوسطة القسوة.", en: "Dual-sided: soft and medium-firm." },
     feel: { ar: "لين / متوسط القسوة", en: "Soft / medium-firm" },
@@ -83,20 +85,117 @@ const mattresses = [
   },
 ];
 
+const pillows = [
+  {
+    id: "pillow-standard", video: "signature", frameCount: 30, height: "12 cm",
+    name: { ar: "وسادة فندقية قياسية", en: "Standard Hotel Pillow" },
+    value: { ar: "دعم فندقي احترافي.", en: "Professional hotel support." },
+    feel: { ar: "متوسط", en: "Medium" },
+    line: { ar: "دعم العنق المثالي.", en: "Perfect neck support." },
+    intro: { ar: "وسادة مصممة خصيصاً لمعايير الفنادق الفاخرة، توفر دعماً ثابتاً وراحة طوال الليل.", en: "A pillow designed for luxury hotel standards, providing steady support and comfort throughout the night." },
+    layers: [
+      { ar: "غطاء فندقي 100% قطن مصري", en: "100% Egyptian cotton hotel cover" },
+      { ar: "حشوة ألياف عالية الكثافة", en: "High-density fiber fill" },
+      { ar: "دعم منتصف الرقبة", en: "Mid-neck support layer" },
+    ],
+    highlights: { ar: ["دعم احترافي", "قطن مصري 100%", "مضاد للحساسية"], en: ["Professional support", "100% Egyptian cotton", "Hypoallergenic"] },
+  },
+  {
+    id: "pillow-premium", video: "softness", frameCount: 30, height: "15 cm",
+    name: { ar: "وسادة فندقية فاخرة", en: "Premium Hotel Pillow" },
+    value: { ar: "فخامة محسوسة.", en: "Luxury you can feel." },
+    feel: { ar: "ناعم", en: "Soft" },
+    line: { ar: "لذة النعومة الفاخرة.", en: "The pleasure of luxury softness." },
+    intro: { ar: "وسادة عالية الجودة بحشوة فاخرة توفر أقصى درجات الراحة والدعم للنزلاء المتطلبين.", en: "Premium-quality pillow with luxury fill offering maximum comfort and support for discerning guests." },
+    layers: [
+      { ar: "ساتان فندقي 100% حرير", en: "100% silk hotel satin" },
+      { ar: "حشوة بر الشرقية المحسنة", en: "Enhanced eider fill" },
+      { ar: "دعم مرن عالي الجودة", en: "Premium flexible support" },
+    ],
+    highlights: { ar: ["حرير 100%", "حشوة فاخرة", "دعم فائق"], en: ["100% silk", "Luxury fill", "Superior support"] },
+  },
+];
+
+const bedLinens = [
+  {
+    id: "sheets-sateen", video: "classic", frameCount: 30, height: "300 TC",
+    name: { ar: "مفروشات ساتان فندقية", en: "Sateen Hotel Linens" },
+    value: { ar: "انزلاق ناعم وتشطيب فاخر.", en: "Silky smooth glide and luxury finish." },
+    feel: { ar: "ناعم جداً", en: "Ultra soft" },
+    line: { ar: "إحساس الفخامة من أول لمسة.", en: "Luxury sensation from first touch." },
+    intro: { ar: "مفروشات فندقية من القطن النقي بنسج ساتان يوفر انزلاقاً ناعماً وتشطيباً فاخراً يستمر طويلاً.", en: "Pure cotton hotel linens with sateen weave providing silky glide and luxury finish that lasts." },
+    layers: [
+      { ar: "قطن 100% مصري طويل الألياف", en: "100% long-staple Egyptian cotton" },
+      { ar: "نسج ساتان 500 TC", en: "500 TC sateen weave" },
+      { ar: "تشطيب فندقي فاخر", en: "Luxury hotel finish" },
+    ],
+    highlights: { ar: ["قطن 100% مصري", "نسج ساتان", "عمر طويل"], en: ["100% Egyptian cotton", "Sateen weave", "Long-lasting"] },
+  },
+  {
+    id: "sheets-percale", video: "prada", frameCount: 30, height: "300 TC",
+    name: { ar: "مفروشات بيركال فندقية", en: "Percale Hotel Linens" },
+    value: { ar: "تهوية مثالية وتنظيف سهل.", en: "Perfect ventilation and easy care." },
+    feel: { ar: "خفيف وحريري", en: "Light and silky" },
+    line: { ar: "تهوية وراحة مثالية.", en: "Perfect airflow and comfort." },
+    intro: { ar: "مفروشات بنسج بيركال تجمع بين التهوية المثالية والراحة العالية، مثالية للفنادق والمشاريع السكنية.", en: "Percale weave linens combining perfect ventilation and high comfort, ideal for hotels and residential projects." },
+    layers: [
+      { ar: "قطن 100% خالص", en: "100% pure cotton" },
+      { ar: "نسج بيركال 400 TC", en: "400 TC percale weave" },
+      { ar: "معالجة مضادة للتجاعيد", en: "Wrinkle-resistant treatment" },
+    ],
+    highlights: { ar: ["تهوية ممتازة", "سهلة التنظيف", "مضادة للتجاعيد"], en: ["Excellent ventilation", "Easy care", "Wrinkle-resistant"] },
+  },
+];
+
+const mattressPads = [
+  {
+    id: "pad-quilted", video: "grand", frameCount: 30, height: "2 cm",
+    name: { ar: "لباد مرتبة مخيط فندقي", en: "Quilted Hotel Mattress Pad" },
+    value: { ar: "حماية وراحة إضافية.", en: "Protection and added comfort." },
+    feel: { ar: "متوسط", en: "Medium" },
+    line: { ar: "حماية المرتبة مع راحة زائدة.", en: "Mattress protection with added comfort." },
+    intro: { ar: "لباد مرتبة مخيط يوفر حماية كاملة للمرتبة مع طبقة راحة إضافية، مثالي للفنادق والمشاريع السكنية.", en: "Quilted mattress pad providing full mattress protection with added comfort layer, ideal for hotels and residential projects." },
+    layers: [
+      { ar: "قطن 100% أبيض", en: "100% white cotton" },
+      { ar: "حشوة بولي فاخرة", en: "Luxury poly fill" },
+      { ar: "قاعدة مطاطية مرنة", en: "Elastic rubber base" },
+    ],
+    highlights: { ar: ["حماية كاملة", "راحة إضافية", "تثبيت آمن"], en: ["Full protection", "Added comfort", "Secure fit"] },
+  },
+  {
+    id: "pad-waterproof", video: "softness", frameCount: 30, height: "1.5 cm",
+    name: { ar: "لباد مرتبة مقاوم للماء", en: "Waterproof Hotel Mattress Pad" },
+    value: { ar: "حماية مقاومة للماء والبقع.", en: "Waterproof and stain protection." },
+    feel: { ar: "خفيف", en: "Light" },
+    line: { ar: "حماية فعالة بدون سمك زائد.", en: "Effective protection without bulk." },
+    intro: { ar: "لباد مقاوم للماء يحمي المرتبة من السوائل والبقع مع الحفاظ على المرونة والراحة، حل مثالي للفنادق.", en: "Waterproof pad protecting mattresses from liquids and stains while maintaining flexibility and comfort, ideal for hotels." },
+    layers: [
+      { ar: "طبقة ميكروفيبر علوية", en: "Top microfiber layer" },
+      { ar: "غشاء مقاوم للماء", en: "Waterproof membrane" },
+      { ar: "قاعدة لا تنزلق", en: "Non-slip base" },
+    ],
+    highlights: { ar: ["مقاوم للماء 100%", "سهل التنظيف", "لا ينزلق"], en: ["100% waterproof", "Easy clean", "Non-slip"] },
+  },
+];
+
 const copy = {
   ar: {
     collection: "منتجات هوفن قسم مبيعات الجملة", menu: "تواصل", switch: "EN", hero: "مزيج الجودة مع\nالسعر والموثوقية",
-    heroBody: "مجموعة مراتب للفنادق، والمشاريع السكنية، ومتاجر الأثاث التي تبحث عن جودة يمكن الوثوق بها.", explore: "اكتشف المجموعة",
-    layerTitle: "طبقات المرتبة", layerHint: "تظهر المواصفات بعد اكتمال الحركة", height: "ارتفاع المرتبة", feel: "الإحساس", layersCount: "عدد الطبقات", benefits: "المزايا بعد اكتمال الطبقات",
+    heroBody: "مجموعة شاملة من المراتب والوسائد والمفروشات واللباد للفنادق، والمشاريع السكنية، ومتاجر الأثاث التي تبحث عن جودة يمكن الوثوق بها.", explore: "اكتشف المجموعة",
+    layerTitle: "طبقات المنتج", layerHint: "تظهر المواصفات بعد اكتمال الحركة", height: "المقاس", feel: "الإحساس", layersCount: "عدد الطبقات", benefits: "المزايا بعد اكتمال الطبقات",
     wholesale: "مصمم للأعمال", wholesaleTitle: "شريك الراحة\nلمشروعك القادم.", wholesaleBody: "ضمان ٧ سنوات · توريد إلى جميع مناطق المملكة · مدة التجهيز ١٥ يومًا وتختلف حسب الكمية.",
     contact: "لنصنع راحة أفضل", contactTitle: "لنبدأ الحديث عن\nمشروعك القادم.", top: "للأعلى", label: "المجموعة",
+    mattresses: "المراتب الفندقية", pillows: "الوسائد الفندقية", linens: "المفروشات الفندقية", pads: "لباد المراتب",
+    formName: "الاسم", formEmail: "البريد الإلكتروني", formPhone: "الهاتف", formCompany: "اسم المشروع", formMessage: "الرسالة", formSubmit: "أرسل الطلب", formSuccess: "تم إرسال طلبك بنجاح!",
   },
   en: {
     collection: "HOVEN WHOLESALE COLLECTION · 2026", menu: "Contact", switch: "ع", hero: "Comfort made\nfor your projects.",
-    heroBody: "A mattress collection for hospitality, residences, and retail partners seeking quality they can rely on.", explore: "Explore collection",
-    layerTitle: "Mattress layers", layerHint: "Specifications reveal when the motion is complete", height: "Mattress height", feel: "Feel", layersCount: "Layer count", benefits: "Benefits revealed after every layer",
+    heroBody: "A comprehensive collection of mattresses, pillows, linens, and pads for hospitality, residences, and retail partners seeking quality they can rely on.", explore: "Explore collection",
+    layerTitle: "Product layers", layerHint: "Specifications reveal when the motion is complete", height: "Size", feel: "Feel", layersCount: "Layer count", benefits: "Benefits revealed after every layer",
     wholesale: "BUILT FOR BUSINESS", wholesaleTitle: "A comfort partner\nfor your next project.", wholesaleBody: "7-year warranty · Delivery across Saudi Arabia · 15-day preparation time, varying by order quantity.",
     contact: "LET'S BUILD BETTER REST", contactTitle: "Let's talk about\nyour next project.", top: "Back to top", label: "THE COLLECTION",
+    mattresses: "Hotel Mattresses", pillows: "Hotel Pillows", linens: "Hotel Linens", pads: "Mattress Pads",
+    formName: "Name", formEmail: "Email", formPhone: "Phone", formCompany: "Project Name", formMessage: "Message", formSubmit: "Send Request", formSuccess: "Your request has been sent successfully!",
   },
 } as const;
 
@@ -104,39 +203,279 @@ function Multiline({ children }: { children: string }) { return <>{children.spli
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>("ar");
-  const [active, setActive] = useState("");
   const t = copy[lang];
+
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => entry.isIntersecting && setActive(entry.target.id)), { threshold: 0.63 });
-    document.querySelectorAll<HTMLElement>(".mattress-stage").forEach(section => observer.observe(section));
-    return () => observer.disconnect();
   }, [lang]);
-  return <main className={`site ${lang}`} dir={lang === "ar" ? "rtl" : "ltr"}>
-    <header className="topbar">
-      <a href="#top" className="logo" aria-label="HOVEN home"><img src="/hoven-logo-white.png" alt="HOVEN" /></a>
-      <div className="header-actions"><a href="#contact">{t.menu}</a><button onClick={() => setLang(lang === "ar" ? "en" : "ar")} aria-label="Change language">{t.switch}</button></div>
-    </header>
-    <section id="top" className="hero-screen">
-      <video autoPlay muted loop playsInline preload="auto"><source src="/video/hero.mp4" type="video/mp4" /></video><div className="veil" />
-      <div className="center-copy hero-copy"><p className="eyebrow">{t.collection}</p><h1><Multiline>{t.hero}</Multiline></h1><p>{t.heroBody}</p><a className="round-link" href="#signature"><span>{t.explore}</span><b>↓</b></a></div>
-    </section>
-    <section className="collection-intro"><p className="eyebrow">{t.label}</p><h2>{lang === "ar" ? <>المجموعة الأولى<br /><em>المراتب</em></> : <>Five mattresses,<br /><em>clearly considered.</em></>}</h2></section>
-    {[...mattresses].sort((a, b) => (a.id === "softness" ? -1 : b.id === "softness" ? 1 : 0)).map((m, index) => <section id={m.id} key={m.id} className={`mattress-stage ${active === m.id ? "is-active" : ""}`}>
-      <div className="sticky-stage"><video autoPlay muted loop playsInline preload="auto"><source src={`/video/${m.video}.mp4`} type="video/mp4" /></video><div className="veil" />
-        <div className="center-copy product-copy"><p className="eyebrow">{String(index + 1).padStart(2, "0")} / {m.name.en.toUpperCase()}</p><h2>{m.name[lang]}</h2><strong>{m.value[lang]}</strong></div>
-        <div className="product-details"><h3>{m.line[lang]}</h3><p>{m.intro[lang]}</p></div>
-        <div className="spec-strip" aria-label={t.layerTitle}>
-          <div><span>{t.height}</span><b>{m.height}</b></div>
-          <div><span>{t.feel}</span><b>{m.feel[lang]}</b></div>
-          <div className="layer-summary"><span>{t.layerTitle}</span><p>{m.layers.map((layer, layerIndex) => <i key={layer.en}><b>{String(layerIndex + 1).padStart(2, "0")}</b>{layer[lang]}</i>)}</p></div>
+
+  return (
+    <main dir={lang === "ar" ? "rtl" : "ltr"}>
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+          <a href="#top" className="flex-shrink-0">
+            <img src="/hoven-logo-white.png" alt="HOVEN" className="h-8 w-auto" />
+          </a>
+          <nav className="flex items-center gap-4 text-white">
+            <a href="#contact" className="hover:opacity-80 transition">{t.menu}</a>
+            <button
+              onClick={() => setLang(lang === "ar" ? "en" : "ar")}
+              className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-white transition"
+              aria-label="Change language"
+            >
+              {t.switch}
+            </button>
+          </nav>
         </div>
-        <div className="layers" aria-label={t.layerTitle}><div className="layers-head"><span>{t.layerTitle}</span><small>{t.layerHint}</small></div>{m.layers.map((layer, layerIndex) => <article key={layer.en} style={{ "--delay": `${layerIndex * 150}ms` } as React.CSSProperties}><b>{String(layerIndex + 1).padStart(2, "0")}</b><span>{layer[lang]}</span></article>)}</div>
-        <div className="highlights"><small>{t.benefits}</small>{m.highlights[lang].map(item => <span key={item}>{item}</span>)}</div>
+      </header>
+
+      {/* Hero */}
+      <section id="top" className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/video/hero.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 text-center text-white px-4">
+          <p className="text-sm tracking-widest mb-4 opacity-75">{t.collection}</p>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 max-w-3xl mx-auto whitespace-pre-line">
+            {t.hero}
+          </h1>
+          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">{t.heroBody}</p>
+          <a
+            href="#signature"
+            className="inline-flex items-center gap-2 border border-white px-6 py-3 hover:bg-white hover:text-black transition"
+          >
+            {t.explore}
+          </a>
+        </div>
+      </section>
+
+      {/* Collection Intro - Mattresses */}
+      <section className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+        <p className="text-sm tracking-widest text-gray-500 mb-4">{t.label}</p>
+        <h2 className="text-4xl md:text-5xl font-bold">
+          {lang === "ar" ? (
+            <>المجموعة الأولى<br /><em className="font-normal italic">المراتب</em></>
+          ) : (
+            <>Five mattresses,<br /><em className="font-normal italic">clearly considered.</em></>
+          )}
+        </h2>
+      </section>
+
+      {/* Mattresses Grid */}
+      <div className="max-w-7xl mx-auto px-4 pb-16 space-y-20 md:space-y-32">
+        {mattresses.map((m) => (
+          <ProductCard
+            key={m.id}
+            id={m.id}
+            nameAr={m.name.ar}
+            nameEn={m.name.en}
+            taglineAr={m.value.ar}
+            taglineEn={m.value.en}
+            descriptionAr={m.intro.ar}
+            descriptionEn={m.intro.en}
+            heightCm={m.height}
+            feel={m.feel[lang]}
+            layers={m.layers}
+            highlightsAr={m.highlights.ar}
+            highlightsEn={m.highlights.en}
+            video={m.video}
+            frameCount={m.frameCount}
+            language={lang}
+          />
+        ))}
       </div>
-    </section>)}
-    <section className="wholesale"><p className="eyebrow">{t.wholesale}</p><h2><Multiline>{t.wholesaleTitle}</Multiline></h2><p>{t.wholesaleBody}</p></section>
-    <footer id="contact"><img src="/hoven-logo-white.png" alt="HOVEN" /><p className="eyebrow">{t.contact}</p><h2><Multiline>{t.contactTitle}</Multiline></h2><a className="email" href="mailto:leen@brandsforhome.sa">leen@brandsforhome.sa</a><a className="phone" href="tel:+966557227180">055 722 7180</a><a className="whatsapp" href="https://wa.me/966505130111" target="_blank" rel="noreferrer">WhatsApp</a><a className="to-top" href="#top">{t.top} ↑</a></footer>
-  </main>;
+
+      {/* Collection Intro - Pillows */}
+      <section className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+        <h2 className="text-4xl md:text-5xl font-bold">
+          {lang === "ar" ? (
+            <>المجموعة الثانية<br /><em className="font-normal italic">الوسائد</em></>
+          ) : (
+            <>Premium pillows,<br /><em className="font-normal italic">for perfect rest.</em></>
+          )}
+        </h2>
+      </section>
+
+      {/* Pillows Grid */}
+      <div className="max-w-7xl mx-auto px-4 pb-16 space-y-20 md:space-y-32">
+        {pillows.map((p) => (
+          <ProductCard
+            key={p.id}
+            id={p.id}
+            nameAr={p.name.ar}
+            nameEn={p.name.en}
+            taglineAr={p.value.ar}
+            taglineEn={p.value.en}
+            descriptionAr={p.intro.ar}
+            descriptionEn={p.intro.en}
+            heightCm={p.height}
+            feel={p.feel[lang]}
+            layers={p.layers}
+            highlightsAr={p.highlights.ar}
+            highlightsEn={p.highlights.en}
+            video={p.video}
+            frameCount={p.frameCount}
+            language={lang}
+          />
+        ))}
+      </div>
+
+      {/* Collection Intro - Linens */}
+      <section className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+        <h2 className="text-4xl md:text-5xl font-bold">
+          {lang === "ar" ? (
+            <>المجموعة الثالثة<br /><em className="font-normal italic">المفروشات</em></>
+          ) : (
+            <>Hotel linens,<br /><em className="font-normal italic">luxury every night.</em></>
+          )}
+        </h2>
+      </section>
+
+      {/* Linens Grid */}
+      <div className="max-w-7xl mx-auto px-4 pb-16 space-y-20 md:space-y-32">
+        {bedLinens.map((l) => (
+          <ProductCard
+            key={l.id}
+            id={l.id}
+            nameAr={l.name.ar}
+            nameEn={l.name.en}
+            taglineAr={l.value.ar}
+            taglineEn={l.value.en}
+            descriptionAr={l.intro.ar}
+            descriptionEn={l.intro.en}
+            heightCm={l.height}
+            feel={l.feel[lang]}
+            layers={l.layers}
+            highlightsAr={l.highlights.ar}
+            highlightsEn={l.highlights.en}
+            video={l.video}
+            frameCount={l.frameCount}
+            language={lang}
+          />
+        ))}
+      </div>
+
+      {/* Collection Intro - Pads */}
+      <section className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+        <h2 className="text-4xl md:text-5xl font-bold">
+          {lang === "ar" ? (
+            <>المجموعة الرابعة<br /><em className="font-normal italic">لباد المراتب</em></>
+          ) : (
+            <>Mattress protection,<br /><em className="font-normal italic">built to last.</em></>
+          )}
+        </h2>
+      </section>
+
+      {/* Pads Grid */}
+      <div className="max-w-7xl mx-auto px-4 pb-16 space-y-20 md:space-y-32">
+        {mattressPads.map((pad) => (
+          <ProductCard
+            key={pad.id}
+            id={pad.id}
+            nameAr={pad.name.ar}
+            nameEn={pad.name.en}
+            taglineAr={pad.value.ar}
+            taglineEn={pad.value.en}
+            descriptionAr={pad.intro.ar}
+            descriptionEn={pad.intro.en}
+            heightCm={pad.height}
+            feel={pad.feel[lang]}
+            layers={pad.layers}
+            highlightsAr={pad.highlights.ar}
+            highlightsEn={pad.highlights.en}
+            video={pad.video}
+            frameCount={pad.frameCount}
+            language={lang}
+          />
+        ))}
+      </div>
+
+      {/* Wholesale */}
+      <section className="bg-gray-100 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="text-sm tracking-widest text-gray-500 mb-4">{t.wholesale}</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 whitespace-pre-line">
+            {t.wholesaleTitle}
+          </h2>
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">{t.wholesaleBody}</p>
+        </div>
+      </section>
+
+      {/* Contact Section with Form */}
+      <footer id="contact" className="bg-black text-white py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Contact Info */}
+            <div className="text-center lg:text-start" dir={lang === "ar" ? "rtl" : "ltr"}>
+              <img src="/hoven-logo-white.png" alt="HOVEN" className="h-8 mb-8 mx-auto lg:mx-0" />
+              <p className="text-sm tracking-widest mb-4 opacity-75">{t.contact}</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-12 whitespace-pre-line">
+                {t.contactTitle}
+              </h2>
+              <div className="space-y-4 mb-8">
+                <div>
+                  <a
+                    href="mailto:ceo@brandsforhome.sa"
+                    className="hover:opacity-75 transition text-lg"
+                  >
+                    ceo@brandsforhome.sa
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="tel:+966557227180"
+                    className="hover:opacity-75 transition text-lg"
+                  >
+                    055 722 7180
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://wa.me/966505130111"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-block px-4 py-2 border border-white/50 hover:border-white transition"
+                  >
+                    WhatsApp
+                  </a>
+                </div>
+              </div>
+              <a
+                href="#top"
+                className="text-sm opacity-75 hover:opacity-100 transition"
+              >
+                {t.top} ↑
+              </a>
+            </div>
+
+            {/* Contact Form */}
+            <div>
+              <ContactForm
+                language={lang}
+                copy={{
+                  formName: t.formName,
+                  formEmail: t.formEmail,
+                  formPhone: t.formPhone,
+                  formCompany: t.formCompany,
+                  formMessage: t.formMessage,
+                  formSubmit: t.formSubmit,
+                  formSuccess: t.formSuccess,
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
 }
