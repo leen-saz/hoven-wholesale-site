@@ -1,8 +1,8 @@
 import ScrollLinkedAnimation from './ScrollLinkedAnimation';
 
 interface Layer {
-  nameAr: string;
-  nameEn: string;
+  ar: string;
+  en: string;
 }
 
 interface ProductCardProps {
@@ -103,7 +103,7 @@ export default function ProductCard({
                   <div key={idx} className="flex items-start gap-2">
                     <span className="inline-block w-1.5 h-1.5 bg-gray-400 rounded-full mt-1.5 flex-shrink-0" />
                     <span className="text-sm text-gray-700">
-                      {isArabic ? layer.nameAr : layer.nameEn}
+                      {isArabic ? layer.ar : layer.en}
                     </span>
                   </div>
                 ))}
