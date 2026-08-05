@@ -25,29 +25,30 @@ export default function Pillows() {
         onLanguageChange={() => setLang(lang === "ar" ? "en" : "ar")}
       />
 
-      {/* Hero - Video Background */}
-      <section id="top" className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/video/hero.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 text-center text-white px-4">
-          <p className="text-sm tracking-widest mb-4 opacity-75">{t.collection}</p>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 max-w-3xl mx-auto">
-            {lang === "ar" ? "مخدات هوفن الفندقية" : "HOVEN Hotel Pillows"}
-          </h1>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            {lang === "ar"
-              ? "دعم احترافي وراحة استثنائية للنزلاء المتطلبين"
-              : "Professional support and exceptional comfort for discerning guests"}
-          </p>
+      {/* Hero - Image Background with Overlay Text */}
+      <section
+        id="top"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        style={{
+          backgroundImage: "url(/products/pillow-premium.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
+        <div className="relative z-10 max-w-5xl mx-auto px-8 md:px-16 py-20 text-white">
+          <div className="space-y-6">
+            <p className="text-sm tracking-widest opacity-80 uppercase">{t.collection}</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              {lang === "ar" ? "مخدات هوفن الفندقية" : "HOVEN Hotel Pillows"}
+            </h1>
+            <p className="text-lg md:text-xl opacity-95 max-w-2xl leading-relaxed">
+              {lang === "ar"
+                ? "دعم احترافي وراحة استثنائية للنزلاء المتطلبين"
+                : "Professional support and exceptional comfort for discerning guests"}
+            </p>
+          </div>
         </div>
       </section>
 
