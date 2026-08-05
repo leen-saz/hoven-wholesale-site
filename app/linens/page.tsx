@@ -28,12 +28,9 @@ export default function Linens() {
       {/* Hero - Image Background with Overlay Text */}
       <section
         id="top"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: "url(/products/sheets-sateen.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
+          backgroundImage: 'url("/products/sheets-sateen.jpg")',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-l from-black/70 to-black/40" />
