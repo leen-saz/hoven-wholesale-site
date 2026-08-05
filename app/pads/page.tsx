@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ProductCard from "@/app/components/ProductCard";
+import PadProductCard from "@/app/components/PadProductCard";
 import ContactForm from "@/app/components/ContactForm";
 import Navigation from "@/app/components/Navigation";
 import { mattressPads, copy } from "@/app/lib/products";
@@ -65,11 +65,12 @@ export default function Pads() {
       </section>
 
       {/* Pads Grid */}
-      <div className="max-w-7xl mx-auto px-4 pb-16 space-y-20 md:space-y-32">
+      <div className="pb-16 space-y-20 md:space-y-32">
         {mattressPads.map((pad) => (
-          <ProductCard
+          <PadProductCard
             key={pad.id}
             id={pad.id}
+            image={pad.image}
             nameAr={pad.name.ar}
             nameEn={pad.name.en}
             taglineAr={pad.value.ar}
@@ -81,8 +82,6 @@ export default function Pads() {
             layers={pad.layers}
             highlightsAr={pad.highlights.ar}
             highlightsEn={pad.highlights.en}
-            video={pad.video}
-            frameCount={pad.frameCount}
             language={lang}
           />
         ))}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ProductCard from "@/app/components/ProductCard";
+import LinenProductCard from "@/app/components/LinenProductCard";
 import ContactForm from "@/app/components/ContactForm";
 import Navigation from "@/app/components/Navigation";
 import { bedLinens, copy } from "@/app/lib/products";
@@ -62,11 +62,12 @@ export default function Linens() {
       </section>
 
       {/* Linens Grid */}
-      <div className="max-w-7xl mx-auto px-4 pb-16 space-y-20 md:space-y-32">
+      <div className="pb-16 space-y-20 md:space-y-32">
         {bedLinens.map((l) => (
-          <ProductCard
+          <LinenProductCard
             key={l.id}
             id={l.id}
+            image={l.image}
             nameAr={l.name.ar}
             nameEn={l.name.en}
             taglineAr={l.value.ar}
@@ -78,8 +79,6 @@ export default function Linens() {
             layers={l.layers}
             highlightsAr={l.highlights.ar}
             highlightsEn={l.highlights.en}
-            video={l.video}
-            frameCount={l.frameCount}
             language={lang}
           />
         ))}

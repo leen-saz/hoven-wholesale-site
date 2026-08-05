@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ProductCard from "@/app/components/ProductCard";
+import PillowProductCard from "@/app/components/PillowProductCard";
 import ContactForm from "@/app/components/ContactForm";
 import Navigation from "@/app/components/Navigation";
 import { pillows, copy } from "@/app/lib/products";
@@ -64,12 +64,13 @@ export default function Pillows() {
         </h2>
       </section>
 
-      {/* Pillows Grid */}
-      <div className="max-w-7xl mx-auto px-4 pb-16 space-y-20 md:space-y-32">
-        {pillows.map((p) => (
-          <ProductCard
+      {/* Pillows - Stacked Vertically with Combined Background */}
+      <div className="pb-16">
+        {pillows.map((p, idx) => (
+          <PillowProductCard
             key={p.id}
             id={p.id}
+            image={p.image}
             nameAr={p.name.ar}
             nameEn={p.name.en}
             taglineAr={p.value.ar}
@@ -81,9 +82,8 @@ export default function Pillows() {
             layers={p.layers}
             highlightsAr={p.highlights.ar}
             highlightsEn={p.highlights.en}
-            video={p.video}
-            frameCount={p.frameCount}
             language={lang}
+            isSecond={idx === 1}
           />
         ))}
       </div>

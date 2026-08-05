@@ -79,7 +79,7 @@ export const mattresses = [
 
 export const pillows = [
   {
-    id: "pillow-standard", video: "hero", frameCount: 30, height: "50 × 75 سم",
+    id: "pillow-standard", image: "/products/pillow-standard.jpg", video: "hero", frameCount: 30, height: "50 × 75 سم",
     name: { ar: "مخدة هوفن الفندقية — الحجم القياسي", en: "HOVEN Hotel Pillow — Standard Size" },
     value: { ar: "دعم احترافي للعنق والرأس، معايير فندقية عالمية.", en: "Professional neck & head support, international hotel standards." },
     feel: { ar: "متوسط", en: "Medium" },
@@ -93,7 +93,7 @@ export const pillows = [
     highlights: { ar: ["دعم عنق احترافي", "قابل للغسيل المتكرر", "أداء ثابت في الفنادق", "توريد موثوق للسعودية"], en: ["Professional neck support", "Repeated wash-resistant", "Proven hotel performance", "Reliable KSA delivery"] },
   },
   {
-    id: "pillow-premium", video: "hero", frameCount: 30, height: "50 × 75 سم",
+    id: "pillow-premium", image: "/products/pillow-premium.jpg", video: "hero", frameCount: 30, height: "50 × 75 سم",
     name: { ar: "مخدة هوفن الفندقية — الحجم الفاخر", en: "HOVEN Hotel Pillow — Premium Size" },
     value: { ar: "أداء فندقي فاخر مع حشوة محسنة وراحة استثنائية.", en: "Luxury hotel performance with enhanced fill and exceptional comfort." },
     feel: { ar: "ناعم وداعم", en: "Soft and supportive" },
@@ -110,7 +110,7 @@ export const pillows = [
 
 export const bedLinens = [
   {
-    id: "sheets-sateen", video: "hero", frameCount: 30, height: "نفرين 240×260 سم",
+    id: "sheets-sateen", image: "/products/sheets-sateen.jpg", video: "hero", frameCount: 30, height: "نفرين 240×260 سم",
     name: { ar: "مفروشات هوفن الفندقية ساتان — طقم نفرين", en: "HOVEN Hotel Linens Sateen — Double Set" },
     value: { ar: "ملمس حريري فاخر مع متانة فندقية عالية، 7 قطع كاملة.", en: "Silky luxury texture with premium hotel durability, 7-piece complete set." },
     feel: { ar: "ناعم وحريري", en: "Silky and smooth" },
@@ -124,7 +124,7 @@ export const bedLinens = [
     highlights: { ar: ["قطن مصري 100% ممتاز", "ملمس حريري فاخر", "تحمل الغسيل المكثف", "7 قطع كاملة", "ضمان جودة موثوق"], en: ["Premium 100% Egyptian cotton", "Luxury silky texture", "Intensive wash-resistant", "7 complete pieces", "Proven quality guarantee"] },
   },
   {
-    id: "sheets-percale", video: "hero", frameCount: 30, height: "نفرين 200×150 سم",
+    id: "sheets-percale", image: "/products/sheets-percale.jpg", video: "hero", frameCount: 30, height: "نفرين 200×150 سم",
     name: { ar: "مفروشات هوفن الفندقية بيركال — طقم نفرين", en: "HOVEN Hotel Linens Percale — Double Set" },
     value: { ar: "تهوية مثالية وراحة عليا، 4 قطع أساسية عالية الجودة.", en: "Perfect ventilation and supreme comfort, 4-piece premium essentials." },
     feel: { ar: "خفيف وحريري وسهل العناية", en: "Light, silky, and easy to care for" },
@@ -141,7 +141,7 @@ export const bedLinens = [
 
 export const mattressPads = [
   {
-    id: "pad-quilted", video: "hero", frameCount: 30, height: "14 سم",
+    id: "pad-quilted", image: "/products/pad-quilted.jpg", video: "hero", frameCount: 30, height: "14 سم",
     name: { ar: "لباد هوفن المزدوج — راحة فاخرة بارتفاع 14 سم", en: "HOVEN Double Pad — Luxury Comfort at 14 cm Height" },
     value: { ar: "حماية شاملة مع راحة إضافية وارتفاع مثالي للمراتب المزدوجة.", en: "Complete protection with added comfort and ideal height for double mattresses." },
     feel: { ar: "ناعم وداعم", en: "Soft and supportive" },
@@ -155,7 +155,7 @@ export const mattressPads = [
     highlights: { ar: ["راحة استثنائية للسرير المزدوج", "ارتفاع مثالي 14 سم", "تحسين استواء المرتبة", "حماية محسّنة من التلف", "ميكروفايبر ناعم فاخر", "عمر طويل وأداء موثوق"], en: ["Exceptional comfort for double beds", "Perfect 14 cm height", "Improved mattress alignment", "Enhanced damage protection", "Premium soft microfiber", "Extended durability and reliability"] },
   },
   {
-    id: "pad-waterproof", video: "hero", frameCount: 30, height: "1.5 سم",
+    id: "pad-waterproof", image: "/products/pad-waterproof.jpg", video: "hero", frameCount: 30, height: "1.5 سم",
     name: { ar: "لباد هوفن المقاوم للماء — حماية فعالة بدون سمك", en: "HOVEN Waterproof Pad — Effective Protection Without Bulk" },
     value: { ar: "حماية 100% مقاومة للماء والسوائل والبقع، خفيف وسهل التنظيف.", en: "100% waterproof protection against liquids and stains, lightweight and easy-clean." },
     feel: { ar: "خفيف وناعم", en: "Lightweight and soft" },
