@@ -23,8 +23,14 @@
   font-weight: 700;
 }
 
-/* Base Styles */
+/* Base Styles - HOVEN Brand Colors */
 :root {
+  /* Primary Colors */
+  --navy: #1a3a52;        /* كحلي */
+  --beige: #d4c5b9;       /* بيج */
+  --black: #1a1a1a;       /* أسود */
+
+  /* Legacy */
   --cream: #f5f2e8;
   --ink: #172234;
   --line: rgba(23, 34, 52, 0.17);
@@ -53,6 +59,18 @@ a {
 .logo img,
 footer > img {
   filter: none;
+}
+
+/* Logo - Larger Size */
+header .logo img {
+  height: 48px;  /* زيادة من 32px */
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  header .logo img {
+    height: 56px;  /* أكبر على الشاشات الكبيرة */
+  }
 }
 
 h1,
@@ -86,19 +104,51 @@ header button:hover {
   border-color: white;
 }
 
-/* Frame Container */
+/* Frame Container - Frames Side Display */
 .frame-container {
   width: 100%;
   background: #f0f0f0;
-  overflow: hidden;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+  padding: 40px 20px;
 }
 
 .frame-container img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   image-rendering: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+}
+
+/* RTL: Frames larger on left side */
+[dir="rtl"] .frame-container {
+  justify-content: flex-start;
+  padding-left: 60px;
+}
+
+[dir="ltr"] .frame-container {
+  justify-content: flex-end;
+  padding-right: 60px;
+}
+
+@media (max-width: 768px) {
+  .frame-container {
+    min-height: 400px;
+    padding: 20px;
+  }
+
+  [dir="rtl"] .frame-container {
+    padding-left: 20px;
+  }
+
+  [dir="ltr"] .frame-container {
+    padding-right: 20px;
+  }
 }
 
 /* Responsive */

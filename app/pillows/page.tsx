@@ -25,28 +25,27 @@ export default function Pillows() {
         onLanguageChange={() => setLang(lang === "ar" ? "en" : "ar")}
       />
 
-      {/* Hero */}
-      <section id="top" className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/video/hero.mp4" type="video/mp4" />
-        </video>
+      {/* Hero - Image Background */}
+      <section
+        id="top"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        style={{
+          backgroundImage: "url(/products/pillow-standard.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
         <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 text-center text-white px-4">
-          <p className="text-sm tracking-widest mb-4 opacity-75">{t.collection}</p>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 max-w-3xl mx-auto">
-            {lang === "ar" ? "الوسائد الفندقية" : "Hotel Pillows"}
+        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 py-20 text-white text-center">
+          <p className="text-sm tracking-widest mb-4 opacity-75 uppercase">{t.collection}</p>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            {lang === "ar" ? "مخدات هوفن الفندقية" : "HOVEN Hotel Pillows"}
           </h1>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
             {lang === "ar"
-              ? "وسائد فندقية فاخرة توفر الدعم والراحة المثالية للنزلاء المتطلبين."
-              : "Luxury hotel pillows providing perfect support and comfort for discerning guests."}
+              ? "دعم احترافي وراحة استثنائية للنزلاء المتطلبين"
+              : "Professional support and exceptional comfort for discerning guests"}
           </p>
         </div>
       </section>
