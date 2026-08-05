@@ -4,13 +4,11 @@ import { useEffect, useState } from "react";
 import ProductCard from "@/app/components/ProductCard";
 import ContactForm from "@/app/components/ContactForm";
 import Navigation from "@/app/components/Navigation";
-import { mattresses, copy } from "@/app/lib/products";
+import { pillows, copy } from "@/app/lib/products";
 
 type Lang = "ar" | "en";
 
-function Multiline({ children }: { children: string }) { return <>{children.split("\n").map((line, i) => <span key={line}>{line}{i === 0 && <br />}</span>)}</>; }
-
-export default function Home() {
+export default function Pillows() {
   const [lang, setLang] = useState<Lang>("ar");
   const t = copy[lang];
 
@@ -22,7 +20,7 @@ export default function Home() {
   return (
     <main dir={lang === "ar" ? "rtl" : "ltr"}>
       <Navigation
-        currentPage="home"
+        currentPage="pillows"
         language={lang}
         onLanguageChange={() => setLang(lang === "ar" ? "en" : "ar")}
       />
@@ -42,55 +40,52 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-sm tracking-widest mb-4 opacity-75">{t.collection}</p>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 max-w-3xl mx-auto whitespace-pre-line">
-            {t.hero}
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 max-w-3xl mx-auto">
+            {lang === "ar" ? "الوسائد الفندقية" : "Hotel Pillows"}
           </h1>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">{t.heroBody}</p>
-          <a
-            href="#signature"
-            className="inline-flex items-center gap-2 border border-white px-6 py-3 hover:bg-white hover:text-black transition"
-          >
-            {t.explore}
-          </a>
+          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+            {lang === "ar"
+              ? "وسائد فندقية فاخرة توفر الدعم والراحة المثالية للنزلاء المتطلبين."
+              : "Luxury hotel pillows providing perfect support and comfort for discerning guests."}
+          </p>
         </div>
       </section>
 
-      {/* Collection Intro - Mattresses */}
+      {/* Collection Intro */}
       <section className="max-w-7xl mx-auto px-4 py-16 md:py-24">
         <p className="text-sm tracking-widest text-gray-500 mb-4">{t.label}</p>
         <h2 className="text-4xl md:text-5xl font-bold">
           {lang === "ar" ? (
-            <>المجموعة الأولى<br /><em className="font-normal italic">المراتب</em></>
+            <>المجموعة الثانية<br /><em className="font-normal italic">الوسائد</em></>
           ) : (
-            <>Five mattresses,<br /><em className="font-normal italic">clearly considered.</em></>
+            <>Premium pillows,<br /><em className="font-normal italic">for perfect rest.</em></>
           )}
         </h2>
       </section>
 
-      {/* Mattresses Grid */}
+      {/* Pillows Grid */}
       <div className="max-w-7xl mx-auto px-4 pb-16 space-y-20 md:space-y-32">
-        {mattresses.map((m) => (
+        {pillows.map((p) => (
           <ProductCard
-            key={m.id}
-            id={m.id}
-            nameAr={m.name.ar}
-            nameEn={m.name.en}
-            taglineAr={m.value.ar}
-            taglineEn={m.value.en}
-            descriptionAr={m.intro.ar}
-            descriptionEn={m.intro.en}
-            heightCm={m.height}
-            feel={m.feel[lang]}
-            layers={m.layers}
-            highlightsAr={m.highlights.ar}
-            highlightsEn={m.highlights.en}
-            video={m.video}
-            frameCount={m.frameCount}
+            key={p.id}
+            id={p.id}
+            nameAr={p.name.ar}
+            nameEn={p.name.en}
+            taglineAr={p.value.ar}
+            taglineEn={p.value.en}
+            descriptionAr={p.intro.ar}
+            descriptionEn={p.intro.en}
+            heightCm={p.height}
+            feel={p.feel[lang]}
+            layers={p.layers}
+            highlightsAr={p.highlights.ar}
+            highlightsEn={p.highlights.en}
+            video={p.video}
+            frameCount={p.frameCount}
             language={lang}
           />
         ))}
       </div>
-
 
       {/* Wholesale */}
       <section className="bg-gray-100 py-16 md:py-24">
@@ -103,11 +98,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section with Form */}
+      {/* Contact Section */}
       <footer id="contact" className="bg-black text-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Contact Info */}
             <div className="text-center lg:text-start" dir={lang === "ar" ? "rtl" : "ltr"}>
               <img src="/hoven-logo-white.png" alt="HOVEN" className="h-8 mb-8 mx-auto lg:mx-0" />
               <p className="text-sm tracking-widest mb-4 opacity-75">{t.contact}</p>
@@ -142,15 +136,11 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-              <a
-                href="#top"
-                className="text-sm opacity-75 hover:opacity-100 transition"
-              >
+              <a href="#top" className="text-sm opacity-75 hover:opacity-100 transition">
                 {t.top} ↑
               </a>
             </div>
 
-            {/* Contact Form */}
             <div>
               <ContactForm
                 language={lang}
