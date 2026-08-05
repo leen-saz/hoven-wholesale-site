@@ -92,20 +92,6 @@ export const pillows = [
     ],
     highlights: { ar: ["دعم عنق احترافي", "قابل للغسيل المتكرر", "أداء ثابت في الفنادق", "توريد موثوق للسعودية"], en: ["Professional neck support", "Repeated wash-resistant", "Proven hotel performance", "Reliable KSA delivery"] },
   },
-  {
-    id: "pillow-premium", image: "/products/pillow-premium.jpg", video: "hero", frameCount: 30, height: "50 × 75 سم",
-    name: { ar: "مخدة هوفن الفندقية — الحجم الفاخر", en: "HOVEN Hotel Pillow — Premium Size" },
-    value: { ar: "أداء فندقي فاخر مع حشوة محسنة وراحة استثنائية.", en: "Luxury hotel performance with enhanced fill and exceptional comfort." },
-    feel: { ar: "ناعم وداعم", en: "Soft and supportive" },
-    line: { ar: "تجربة نوم فندقية لا تُضاهى تجمع بين الفخامة والمتانة.", en: "Unmatched hotel sleep experience combining luxury with durability." },
-    intro: { ar: "مخدة هوفن الفاخرة توفر تجربة نوم استثنائية مع حشوة محسنة توزع الضغط بالتساوي. مصممة للفنادق الراقية والمشاريع السكنية الفاخرة، توفر أقصى درجات الراحة والدعم للضيوف المتطلبين. الحشوة المرنة تتشكل مع وضعية النوم الطبيعية، مما يضمن دعماً مثالياً للعنق والرأس والعمود الفقري طوال الليل.", en: "HOVEN Premium Pillow delivers an exceptional sleep experience with enhanced fill that distributes pressure evenly. Designed for luxury hotels and high-end residential projects, it provides maximum comfort and support for discerning guests. The flexible fill conforms to natural sleep position, ensuring optimal support for neck, head, and spine throughout the night." },
-    layers: [
-      { ar: "غطاء ساتان ناعم — خامة فندقية راقية", en: "Soft satin cover — luxury hotel-grade fabric" },
-      { ar: "حشوة بوليستر محسنة عالية الكثافة", en: "Enhanced high-density polyester fill" },
-      { ar: "نواة دعم متقدمة للعنق والرأس", en: "Advanced neck and head support core" },
-    ],
-    highlights: { ar: ["راحة استثنائية للعنق والرأس", "حشوة محسنة عالية الجودة", "مثالية للفنادق الراقية", "دوام طويل الأمد", "توريد جملة موثوق"], en: ["Exceptional neck & head comfort", "Enhanced premium fill", "Perfect for luxury hotels", "Extended durability", "Reliable wholesale delivery"] },
-  },
 ];
 
 export const bedLinens = [
