@@ -92,7 +92,7 @@ export default function Home() {
 
 
       {/* Wholesale */}
-      <section className="bg-gray-100 py-16 md:py-24">
+      <section className="py-16 md:py-24" style={{ backgroundColor: '#d4c5b9' }}>
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-sm tracking-widest text-gray-500 mb-4">{t.wholesale}</p>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 whitespace-pre-line">

@@ -84,7 +84,7 @@ export const pillows = [
     value: { ar: "دعم احترافي للعنق والرأس، معايير فندقية عالمية.", en: "Professional neck & head support, international hotel standards." },
     feel: { ar: "متوسط", en: "Medium" },
     line: { ar: "تصميم فندقي مثبت يحافظ على الراحة والدعم من ليلة لأخرى.", en: "Proven hotel design — comfort and support night after night." },
-    intro: { ar: "مخدة هوفن القياسية توفر التوازن المثالي بين الراحة والدعم. مصممة لمعايير الفنادق الفاخرة في المملكة، وتتحمل الاستخدام المكثف والغسيل المتكرر دون فقدان شكلها أو نعومتها. الخيار الموثوق للفنادق والمشاريع السكنية والمؤسسات التي تبحث عن جودة يمكن الاعتماد عليها.", en: "HOVEN Standard Pillow delivers the perfect balance of comfort and support. Engineered for luxury hotel standards across Saudi Arabia, it withstands intensive use and frequent washing without losing shape or softness. The trusted choice for hotels, residential projects, and institutions seeking reliable quality at wholesale value." },
+    intro: { ar: "توفر التوازن المثالي بين الراحة والدعم مع متانة استثنائية تتحمل الاستخدام المكثف والغسيل المتكرر. الخيار الموثوق للفنادق والمشاريع السكنية.", en: "Delivers perfect balance of comfort and support with exceptional durability. The trusted choice for hotels and residential projects." },
     layers: [
       { ar: "غطاء ميكروفايبر ناعم — خامة عالية الجودة", en: "Soft microfiber cover — premium quality fabric" },
       { ar: "حشوة بوليستر مرن بديل الريش", en: "Flexible polyester fill alternative to down" },
