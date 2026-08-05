@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ProductCard from "@/app/components/ProductCard";
+import MattressProductCard from "@/app/components/MattressProductCard";
 import ContactForm from "@/app/components/ContactForm";
 import Navigation from "@/app/components/Navigation";
 import { mattresses, copy } from "@/app/lib/products";
@@ -68,11 +68,12 @@ export default function Home() {
       </section>
 
       {/* Mattresses Grid */}
-      <div className="max-w-7xl mx-auto px-4 pb-16 space-y-20 md:space-y-32">
+      <div className="pb-16 space-y-0">
         {mattresses.map((m) => (
-          <ProductCard
+          <MattressProductCard
             key={m.id}
             id={m.id}
+            video={m.video}
             nameAr={m.name.ar}
             nameEn={m.name.en}
             taglineAr={m.value.ar}
@@ -84,8 +85,6 @@ export default function Home() {
             layers={m.layers}
             highlightsAr={m.highlights.ar}
             highlightsEn={m.highlights.en}
-            video={m.video}
-            frameCount={m.frameCount}
             language={lang}
           />
         ))}
