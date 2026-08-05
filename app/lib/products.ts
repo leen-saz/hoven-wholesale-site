@@ -96,32 +96,18 @@ export const pillows = [
 
 export const bedLinens = [
   {
-    id: "sheets-sateen", image: "/products/sheets-sateen.jpg", video: "hero", frameCount: 30, height: "نفرين 240×260 سم",
-    name: { ar: "مفروشات هوفن الفندقية ساتان — طقم نفرين", en: "HOVEN Hotel Linens Sateen — Double Set" },
-    value: { ar: "ملمس حريري فاخر مع متانة فندقية عالية، 7 قطع كاملة.", en: "Silky luxury texture with premium hotel durability, 7-piece complete set." },
-    feel: { ar: "ناعم وحريري", en: "Silky and smooth" },
-    line: { ar: "إحساس الفخامة من أول ليلة، مع أداء متينة تتحمل الغسيل المكثف.", en: "Luxury feel from night one, with durability that handles intensive washing." },
-    intro: { ar: "طقم المفروشات الفندقية من هوفن بنسج ساتان يجمع بين الملمس الحريري الفاخر والمتانة الصناعية. مصنوع من قطن مصري 100% عالي الجودة، مع 500 خيط لكل بوصة (TC) يوفر انزلاقاً ناعماً واحساساً فاخراً يستمر لسنوات. الطقم الكامل (7 قطع) يشمل لحافاً وشرشفاً مطاطياً وأغطية وسائد، مثالي للفنادق والمنتجعات والمشاريع السكنية الراقية في المملكة العربية السعودية.", en: "HOVEN's premium hotel linen set combines silky luxury texture with industrial durability. Made from 100% premium Egyptian cotton with 500 thread count (TC), delivering silky glide and luxury feel for years. Complete 7-piece set includes comforter, fitted sheet, and pillow covers — ideal for hotels, resorts, and luxury residential projects across Saudi Arabia." },
+    id: "sheets-sateen", image: "/products/sheets-sateen.jpg", video: "hero", frameCount: 30, height: "نفرين 240×260 سم / نفر ونص 200×240 سم / نفر 180×200 سم",
+    name: { ar: "مفروشات هوفن الفندقية — ميكروفايبر فندقي", en: "HOVEN Hotel Linens — Hotel Microfiber" },
+    value: { ar: "نعومة فندقية متفوقة مع متانة استثنائية، متوفر في 3 قياسات.", en: "Superior hotel softness with exceptional durability, available in 3 sizes." },
+    feel: { ar: "ناعم جداً وفاخر", en: "Ultra-soft and luxurious" },
+    line: { ar: "راحة فندقية متقدمة توفر تجربة نوم استثنائية في كل ليلة.", en: "Advanced hotel comfort delivering exceptional sleep experience every night." },
+    intro: { ar: "مفروشات هوفن الفندقية بخامة الميكروفايبر الناعمة توفر تجربة نوم فاخرة مع حماية شاملة. مصنوعة من ألياف دقيقة جداً توفر ملمساً ناعماً وسلساً، مع متانة استثنائية تتحمل الغسيل المتكرر في الفنادق. متوفرة في ثلاثة قياسات (نفرين 240×260 سم، نفر ونص 200×240 سم، نفر 180×200 سم) لتناسب جميع أحجام الأسرة. الطقم الكامل يشمل لحاف وشرشف مطاطي وأغطية وسائد، مثالي للفنادق والمشاريع السكنية والمؤسسات التي تبحث عن جودة وراحة موثوقة.", en: "HOVEN Hotel Linens in premium microfiber fabric delivers a luxurious sleep experience with comprehensive protection. Made from ultra-fine fibers offering silky-soft texture and exceptional durability that withstands frequent hotel laundering. Available in three sizes (Double 240×260 cm, Twin XL 200×240 cm, Single 180×200 cm) to suit all bed dimensions. Complete set includes comforter, fitted sheet, and pillow covers — ideal for hotels, residential projects, and institutions seeking reliable quality and comfort." },
     layers: [
-      { ar: "قطن 100% مصري طويل الألياف — جودة فندقية", en: "100% long-staple Egyptian cotton — hotel quality" },
-      { ar: "نسج ساتان 500 TC — ملمس حريري", en: "500 TC sateen weave — silky touch" },
-      { ar: "تشطيب ومعالجة فندقية احترافية", en: "Professional hotel finishing and treatment" },
+      { ar: "ميكروفايبر فندقي — ملمس ناعم فاخر", en: "Hotel microfiber — premium soft texture" },
+      { ar: "معالجة مقاومة للتجاعيد والانكماش", en: "Wrinkle and shrink-resistant treatment" },
+      { ar: "تشطيب فندقي احترافي مع ضمان جودة", en: "Professional hotel finishing with quality guarantee" },
     ],
-    highlights: { ar: ["قطن مصري 100% ممتاز", "ملمس حريري فاخر", "تحمل الغسيل المكثف", "7 قطع كاملة", "ضمان جودة موثوق"], en: ["Premium 100% Egyptian cotton", "Luxury silky texture", "Intensive wash-resistant", "7 complete pieces", "Proven quality guarantee"] },
-  },
-  {
-    id: "sheets-percale", image: "/products/sheets-percale.jpg", video: "hero", frameCount: 30, height: "نفرين 200×150 سم",
-    name: { ar: "مفروشات هوفن الفندقية بيركال — طقم نفرين", en: "HOVEN Hotel Linens Percale — Double Set" },
-    value: { ar: "تهوية مثالية وراحة عليا، 4 قطع أساسية عالية الجودة.", en: "Perfect ventilation and supreme comfort, 4-piece premium essentials." },
-    feel: { ar: "خفيف وحريري وسهل العناية", en: "Light, silky, and easy to care for" },
-    line: { ar: "نسيج بيركال الخفيف مثالي للمناخ الدافئ، راحة وتهوية طوال الليل.", en: "Light percale weave perfect for warm climates, comfort and airflow all night." },
-    intro: { ar: "طقم مفروشات هوفن بنسج بيركال يوفر التوازن المثالي بين التهوية والراحة. مصنوع من قطن 100% نقي مع 400 خيط لكل بوصة (TC)، مما يخلق نسيجاً خفيفاً وحريرياً يسمح بتدفق الهواء الأمثل. مثالي للمناطق الدافئة والفنادق الصيفية والمشاريع السكنية التي تبحث عن راحة وسهولة عناية. المعالجة المضادة للتجاعيد توفر مظهراً احترافياً بدون كي إضافي.", en: "HOVEN's percale linen set delivers the perfect balance of ventilation and comfort. Made from 100% pure cotton with 400 thread count (TC), creating a lightweight, silky fabric that optimizes airflow. Ideal for warm climates, summer hotels, and residential projects seeking comfort with easy care. Wrinkle-resistant treatment maintains professional appearance without additional ironing." },
-    layers: [
-      { ar: "قطن 100% خالص — قطن عالي الجودة", en: "100% pure cotton — premium grade" },
-      { ar: "نسج بيركال 400 TC — خفيف وحريري", en: "400 TC percale weave — lightweight and silky" },
-      { ar: "معالجة مضادة للتجاعيد والانكماش", en: "Wrinkle and shrink-resistant treatment" },
-    ],
-    highlights: { ar: ["تهوية فائقة للمناخ الدافئ", "سهلة التنظيف والعناية", "مضادة للتجاعيد بدون كي", "4 قطع أساسية مميزة", "توريد موثوق وسريع"], en: ["Superior ventilation for warm climates", "Easy to clean and maintain", "Wrinkle-resistant without ironing", "4 premium essential pieces", "Reliable and fast delivery"] },
+    highlights: { ar: ["نعومة فندقية متفوقة", "متوفر في 3 قياسات", "متانة استثنائية للغسيل المتكرر", "مضادة للتجاعيد", "ضمان جودة موثوق"], en: ["Superior hotel softness", "Available in 3 sizes", "Exceptional wash durability", "Wrinkle-resistant", "Proven quality guarantee"] },
   },
 ];
 
