@@ -105,34 +105,6 @@ export default function Linens() {
               <h2 className="text-4xl md:text-5xl font-bold mb-12 whitespace-pre-line">
                 {t.contactTitle}
               </h2>
-              <div className="space-y-4 mb-8">
-                <div>
-                  <a
-                    href="mailto:ceo@brandsforhome.sa"
-                    className="hover:opacity-75 transition text-lg"
-                  >
-                    ceo@brandsforhome.sa
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="tel:+966557227180"
-                    className="hover:opacity-75 transition text-lg"
-                  >
-                    055 722 7180
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="https://wa.me/966505130111"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-block px-4 py-2 border border-white/50 hover:border-white transition"
-                  >
-                    WhatsApp
-                  </a>
-                </div>
-              </div>
               <a href="#top" className="text-sm opacity-75 hover:opacity-100 transition">
                 {t.top} ↑
               </a>
