@@ -84,7 +84,7 @@ export const pillows = [
     value: { ar: "دعم احترافي للعنق والرأس، معايير فندقية عالمية.", en: "Professional neck & head support, international hotel standards." },
     feel: { ar: "متوسط", en: "Medium" },
     line: { ar: "تصميم فندقي مثبت يحافظ على الراحة والدعم من ليلة لأخرى.", en: "Proven hotel design — comfort and support night after night." },
-    intro: { ar: "توفر التوازن المثالي بين الراحة والدعم مع متانة استثنائية تتحمل الاستخدام المكثف والغسيل المتكرر. الخيار الموثوق للفنادق والمشاريع السكنية.", en: "Delivers perfect balance of comfort and support with exceptional durability. The trusted choice for hotels and residential projects." },
+    intro: { ar: "دعم احترافي مع متانة استثنائية للاستخدام المكثف والغسيل المتكرر.", en: "Professional support with exceptional durability for heavy use and repeated washing." },
     layers: [
       { ar: "غطاء ميكروفايبر ناعم — خامة عالية الجودة", en: "Soft microfiber cover — premium quality fabric" },
       { ar: "حشوة بوليستر مرن بديل الريش", en: "Flexible polyester fill alternative to down" },
@@ -101,7 +101,7 @@ export const bedLinens = [
     value: { ar: "نعومة فندقية متفوقة مع متانة استثنائية، متوفر في 3 قياسات.", en: "Superior hotel softness with exceptional durability, available in 3 sizes." },
     feel: { ar: "ناعم جداً وفاخر", en: "Ultra-soft and luxurious" },
     line: { ar: "راحة فندقية متقدمة توفر تجربة نوم استثنائية في كل ليلة.", en: "Advanced hotel comfort delivering exceptional sleep experience every night." },
-    intro: { ar: "خامة ميكروفايبر ناعمة توفر تجربة نوم فاخرة مع متانة استثنائية تتحمل الغسيل المتكرر. متوفرة في ثلاثة قياسات لتناسب جميع أحجام الأسرة (نفرين 240×260 سم، نفر ونص 200×240 سم، نفر 180×200 سم). الطقم الكامل يشمل لحاف وشرشف مطاطي وأغطية وسائد، مثالي للفنادق والمشاريع السكنية.", en: "Premium microfiber fabric delivering luxurious sleep experience with exceptional durability. Available in three sizes to suit all bed dimensions (Double 240×260 cm, Twin XL 200×240 cm, Single 180×200 cm). Complete set includes comforter, fitted sheet, and pillow covers — ideal for hotels and residential projects." },
+    intro: { ar: "ميكروفايبر ناعم مع متانة استثنائية للغسيل المتكرر، متوفر في 3 قياسات مع طقم كامل.", en: "Premium microfiber with exceptional wash durability, available in 3 sizes with complete set." },
     layers: [
       { ar: "ميكروفايبر فندقي — ملمس ناعم فاخر", en: "Hotel microfiber — premium soft texture" },
       { ar: "معالجة مقاومة للتجاعيد والانكماش", en: "Wrinkle and shrink-resistant treatment" },
@@ -118,7 +118,7 @@ export const mattressPads = [
     value: { ar: "حماية شاملة مع راحة إضافية وارتفاع مثالي للمراتب المزدوجة.", en: "Complete protection with added comfort and ideal height for double mattresses." },
     feel: { ar: "ناعم وداعم", en: "Soft and supportive" },
     line: { ar: "حوّل سريرك إلى مساحة نوم فاخرة مع دعم وحماية محسّنة.", en: "Transform your bed into a luxury sleep space with enhanced support and protection." },
-    intro: { ar: "لباد هوفن المزدوج يحوّل سريرك إلى مساحة نوم فاخرة. بفضل خامة الميكروفايبر الناعمة والارتفاع المثالي بـ 14 سم، يمنحك هذا اللباد تجربة نوم استثنائية تجمع بين الراحة والدعم والحماية. مصمم خصيصاً للأسرة المزدوجة (200×200 سم)، يساعد في تحسين استواء المرتبة وتعبئة أي فراغات، مما يوفر دعماً إضافياً للظهر والعمود الفقري. الحشوة المتينة وخامة الميكروفايبر عالية الجودة تطيل عمر المرتبة وتحميها من التلف والانبعاج.", en: "HOVEN's double pad transforms your bed into a luxury sleep space. With premium microfiber texture and perfect 14 cm height, this pad delivers exceptional comfort, support, and protection. Specifically designed for double beds (200×200 cm), it improves mattress alignment and fills gaps, providing extra back and spine support. Premium poly fill and high-quality microfiber extend mattress life and protect against damage and sagging." },
+    intro: { ar: "راحة فاخرة مع حماية محسّنة بارتفاع 14 سم مثالي للأسرة المزدوجة.", en: "Luxury comfort with enhanced protection at perfect 14 cm height for double beds." },
     layers: [
       { ar: "ميكروفايبر ناعم عالي الجودة — ملمس فاخر", en: "Premium soft microfiber — luxury texture" },
       { ar: "حشوة بوليستر متينة بارتفاع 14 سم", en: "Durable polyester fill at 14 cm height" },
@@ -132,7 +132,7 @@ export const mattressPads = [
     value: { ar: "حماية 100% مقاومة للماء والسوائل والبقع، خفيف وسهل التنظيف.", en: "100% waterproof protection against liquids and stains, lightweight and easy-clean." },
     feel: { ar: "خفيف وناعم", en: "Lightweight and soft" },
     line: { ar: "حماية موثوقة للمرتبة دون إضافة سمك زائد أو شعور بثقل.", en: "Reliable mattress protection without added bulk or heavy feeling." },
-    intro: { ar: "لباد هوفن المقاوم للماء يوفر حماية شاملة 100% للمرتبة من جميع السوائل والبقع مع الحفاظ على المرونة والراحة. مثالي للفنادق والمؤسسات والمشاريع السكنية التي تتعامل مع حالات متكررة من الانسكابات أو الحوادث. الخامة الخفيفة بارتفاع 1.5 سم فقط لا تضيف أي شعور بثقل، والغشاء المقاوم للماء يحمي المرتبة بينما تبقى الخامة العلوية من الميكروفايبر ناعمة وسهلة التنظيف. القاعدة اللانزلاق تضمن ثبات اللباد طوال الليل.", en: "HOVEN's waterproof pad provides 100% complete mattress protection against all liquids and stains while maintaining flexibility and comfort. Ideal for hotels, institutions, and residential projects dealing with frequent spills or accidents. Lightweight at just 1.5 cm height adds no heaviness, and the waterproof membrane protects the mattress while keeping the top microfiber layer soft and easy-to-clean. Non-slip base ensures the pad stays in place all night." },
+    intro: { ar: "حماية 100% من الماء والسوائل بدون سمك إضافي، خفيف وسهل التنظيف.", en: "100% waterproof protection without bulk, lightweight and easy to clean." },
     layers: [
       { ar: "ميكروفايبر ناعم — طبقة علوية مريحة وقابلة للتنظيف", en: "Soft microfiber — comfortable and cleanable top layer" },
       { ar: "غشاء مقاوم للماء 100% — حماية كاملة من السوائل", en: "100% waterproof membrane — complete liquid protection" },
