@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import PillowProductCard from "@/app/components/PillowProductCard";
-import ContactForm from "@/app/components/ContactForm";
 import Navigation from "@/app/components/Navigation";
 import { pillows, copy } from "@/app/lib/products";
 
@@ -101,33 +100,24 @@ export default function Pillows() {
 
       {/* Contact Section */}
       <footer id="contact" className="bg-black text-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="text-center lg:text-start" dir={lang === "ar" ? "rtl" : "ltr"}>
-              <img src="/hoven-logo-white.png" alt="HOVEN" className="h-8 mb-8 mx-auto lg:mx-0" />
-              <p className="text-sm tracking-widest mb-4 opacity-75">{t.contact}</p>
-              <h2 className="text-4xl md:text-5xl font-bold mb-12 whitespace-pre-line">
-                {t.contactTitle}
-              </h2>
-              <a href="#top" className="text-sm opacity-75 hover:opacity-100 transition">
-                {t.top} ↑
-              </a>
-            </div>
-
-            <div>
-              <ContactForm
-                language={lang}
-                copy={{
-                  formName: t.formName,
-                  formEmail: t.formEmail,
-                  formPhone: t.formPhone,
-                  formCompany: t.formCompany,
-                  formMessage: t.formMessage,
-                  formSubmit: t.formSubmit,
-                  formSuccess: t.formSuccess,
-                }}
-              />
-            </div>
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <img src="/hoven-logo-white.png" alt="HOVEN" className="h-8 mb-8 mx-auto" />
+          <p className="text-sm tracking-widest mb-4 opacity-75">{t.contact}</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 whitespace-pre-line">
+            {t.contactTitle}
+          </h2>
+          <a
+            href="https://wa.me/0557227180"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-white px-6 py-3 hover:bg-white hover:text-black transition mb-8"
+          >
+            {lang === "ar" ? "واتس" : "WhatsApp"}
+          </a>
+          <div className="mt-12">
+            <a href="#top" className="text-sm opacity-75 hover:opacity-100 transition">
+              {t.top} ↑
+            </a>
           </div>
         </div>
       </footer>
