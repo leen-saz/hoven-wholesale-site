@@ -34,13 +34,13 @@ export default function Linens() {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-l from-black/70 to-black/40" />
-        <div className="relative z-10 max-w-5xl mx-auto px-8 md:px-16 py-20 text-white" dir={lang === "ar" ? "rtl" : "ltr"}>
+        <div className="relative z-10 max-w-5xl mx-auto px-8 md:px-16 py-20 text-white text-center" dir={lang === "ar" ? "rtl" : "ltr"}>
           <div className="space-y-6">
             <p className="text-sm tracking-widest opacity-80 uppercase">{t.collection}</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               {lang === "ar" ? "مفروشات هوفن الفندقية" : "HOVEN Hotel Linens"}
             </h1>
-            <p className="text-lg md:text-xl opacity-95 max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl opacity-95 mx-auto max-w-2xl leading-relaxed">
               {lang === "ar"
                 ? "ملمس حريري فاخر مع متانة فندقية عالية لراحة استثنائية"
                 : "Luxury silky texture with premium durability for exceptional comfort"}

@@ -37,13 +37,13 @@ export default function Pillows() {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
-        <div className="relative z-10 max-w-5xl mx-auto px-8 md:px-16 py-20 text-white">
+        <div className="relative z-10 max-w-5xl mx-auto px-8 md:px-16 py-20 text-white text-center">
           <div className="space-y-6">
             <p className="text-sm tracking-widest opacity-80 uppercase">{t.collection}</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               {lang === "ar" ? "مخدات هوفن الفندقية" : "HOVEN Hotel Pillows"}
             </h1>
-            <p className="text-lg md:text-xl opacity-95 max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl opacity-95 mx-auto max-w-2xl leading-relaxed">
               {lang === "ar"
                 ? "دعم احترافي وراحة استثنائية للنزلاء المتطلبين"
                 : "Professional support and exceptional comfort for discerning guests"}

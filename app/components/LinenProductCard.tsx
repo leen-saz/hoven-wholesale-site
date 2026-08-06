@@ -18,6 +18,7 @@ interface LinenProductCardProps {
   highlightsAr: string[];
   highlightsEn: string[];
   language: 'ar' | 'en';
+  alignRight?: boolean;
 }
 
 export default function LinenProductCard({
@@ -35,6 +36,7 @@ export default function LinenProductCard({
   highlightsAr,
   highlightsEn,
   language,
+  alignRight = false,
 }: LinenProductCardProps) {
   const isArabic = language === 'ar';
   const dir = isArabic ? 'rtl' : 'ltr';
@@ -58,7 +60,7 @@ export default function LinenProductCard({
         <div className="absolute inset-0 bg-black/40" />
 
         {/* Description overlay */}
-        <div className={`absolute z-10 top-12 px-8 md:px-16 max-w-2xl text-white ${isArabic ? 'right-0' : 'left-0'}`}>
+        <div className={`absolute z-10 top-12 px-8 md:px-16 max-w-2xl text-white ${alignRight ? (isArabic ? 'right-0' : 'left-0') : 'left-0 right-0 mx-auto text-center'}`}>
           <div className="space-y-6">
             <h2 className="text-3xl lg:text-4xl font-bold leading-snug">
               {isArabic ? nameAr : nameEn}
@@ -66,7 +68,7 @@ export default function LinenProductCard({
             <p className="text-lg text-gray-100 leading-relaxed">
               {isArabic ? taglineAr : taglineEn}
             </p>
-            <p className="text-lg md:text-xl leading-loose max-w-2xl">
+            <p className="text-lg md:text-xl leading-loose">
               {isArabic ? descriptionAr : descriptionEn}
             </p>
           </div>

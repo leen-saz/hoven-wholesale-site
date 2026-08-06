@@ -97,13 +97,13 @@ export const pillows = [
 export const bedLinens = [
   {
     id: "sheets-sateen", image: "/products/sheets-sateen.jpg", video: "hero", frameCount: 30, height: "نفرين 240×260 سم / نفر ونص 200×240 سم / نفر 180×200 سم",
-    name: { ar: "مفروشات هوفن الفندقية — ميكروفايبر فندقي", en: "HOVEN Hotel Linens — Hotel Microfiber" },
+    name: { ar: "مفروشات هوفن الفندقية ميكروفايبر فندقي", en: "HOVEN Hotel Linens Hotel Microfiber" },
     value: { ar: "نعومة فندقية متفوقة مع متانة استثنائية، متوفر في 3 قياسات.", en: "Superior hotel softness with exceptional durability, available in 3 sizes." },
     feel: { ar: "ناعم جداً وفاخر", en: "Ultra-soft and luxurious" },
     line: { ar: "راحة فندقية متقدمة توفر تجربة نوم استثنائية في كل ليلة.", en: "Advanced hotel comfort delivering exceptional sleep experience every night." },
     intro: { ar: "ميكروفايبر ناعم مع متانة استثنائية للغسيل المتكرر، متوفر في 3 قياسات مع طقم كامل.", en: "Premium microfiber with exceptional wash durability, available in 3 sizes with complete set." },
     layers: [
-      { ar: "ميكروفايبر فندقي — ملمس ناعم فاخر", en: "Hotel microfiber — premium soft texture" },
+      { ar: "ميكروفايبر فندقي ملمس ناعم فاخر", en: "Hotel microfiber premium soft texture" },
       { ar: "معالجة مقاومة للتجاعيد والانكماش", en: "Wrinkle and shrink-resistant treatment" },
       { ar: "تشطيب فندقي احترافي مع ضمان جودة", en: "Professional hotel finishing with quality guarantee" },
     ],

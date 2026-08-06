@@ -88,6 +88,7 @@ export default function Pads() {
             highlightsAr={pad.highlights.ar}
             highlightsEn={pad.highlights.en}
             language={lang}
+            alignRight={true}
           />
         ))}
       </div>
