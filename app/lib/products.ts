@@ -118,13 +118,13 @@ export const mattressPads = [
     value: { ar: "ميكروفايبر فاخر مع تثبيت آمن بمغاطات جانبية، تصنيع حسب الطلب.", en: "Premium microfiber with secure side magnets, custom-made to order." },
     feel: { ar: "ناعم وفاخر", en: "Soft and luxurious" },
     line: { ar: "حماية فندقية متقدمة بخامات عالية الجودة وتثبيت موثوق.", en: "Advanced hotel protection with premium materials and reliable fastening." },
-    intro: { ar: "لباد فندقي متميز مصنوع من ميكروفايبر ناعم الخارجي والداخلي مع حشوة ميكروفايبر متينة. مزود بمغاطات جانبية قوية لتثبيت آمن وثابت على المرتبة. يتوفر بارتفاعات مختلفة (8 سم، 14 سم، 21 سم) وتُصنع جميع القياسات والارتفاعات بناءً على الطلب لضمان الملاءمة المثالية لمشروعك.", en: "Premium hotel pad crafted from soft microfiber fabric both inside and out, with durable microfiber fill. Features strong side magnets for secure and stable mattress attachment. Available in multiple heights (8 cm, 14 cm, 21 cm) with all dimensions and heights customized to order for perfect fit to your project specifications." },
+    intro: { ar: "لباد فندقي من ميكروفايبر ناعم خارجي وداخلي مع مغاطات جانبية قوية. جميع القياسات تُصنع حسب الطلب.", en: "Premium hotel pad with soft microfiber exterior and interior featuring strong side magnets. All dimensions customized to order." },
     layers: [
       { ar: "ميكروفايبر خارجي ناعم فاخر", en: "Premium soft outer microfiber" },
       { ar: "حشوة ميكروفايبر متينة", en: "Durable microfiber fill" },
       { ar: "مغاطات جانبية قوية للتثبيت الآمن", en: "Strong side magnets for secure attachment" },
     ],
-    highlights: { ar: ["ميكروفايبر خارجي وداخلي فاخر", "حشوة ميكروفايبر متينة", "مغاطات جانبية للتثبيت الآمن", "ارتفاعات متعددة (8 / 14 / 21 سم)", "تصنيع جميع القياسات حسب الطلب", "أداء فندقي موثوق"], en: ["Premium microfiber exterior and interior", "Durable microfiber fill", "Strong side magnets for secure fastening", "Multiple heights (8 / 14 / 21 cm)", "All dimensions customized to order", "Proven hotel performance"] },
+    highlights: { ar: ["ميكروفايبر ناعم فاخر", "مغاطات جانبية قوية", "ارتفاعات متعددة", "تصنيع حسب الطلب"], en: ["Premium soft microfiber", "Strong side magnets", "Multiple heights", "Customized to order"] },
   },
 ];
 

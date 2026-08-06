@@ -59,14 +59,14 @@ export default function LinenProductCard({
 
         {/* Description overlay */}
         <div className={`absolute z-10 top-12 px-8 md:px-16 max-w-2xl text-white ${isArabic ? 'right-0' : 'left-0'}`}>
-          <div className="space-y-4">
-            <h2 className="text-3xl lg:text-4xl font-bold">
+          <div className="space-y-6">
+            <h2 className="text-3xl lg:text-4xl font-bold leading-snug">
               {isArabic ? nameAr : nameEn}
             </h2>
-            <p className="text-lg text-gray-100">
+            <p className="text-lg text-gray-100 leading-relaxed">
               {isArabic ? taglineAr : taglineEn}
             </p>
-            <p className="text-lg md:text-xl leading-relaxed max-w-2xl">
+            <p className="text-lg md:text-xl leading-loose max-w-2xl">
               {isArabic ? descriptionAr : descriptionEn}
             </p>
           </div>
