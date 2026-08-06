@@ -66,7 +66,7 @@ export default function LinenProductCard({
             <p className="text-lg text-gray-100">
               {isArabic ? taglineAr : taglineEn}
             </p>
-            <p className="text-base leading-relaxed max-w-2xl">
+            <p className="text-lg md:text-xl leading-relaxed max-w-2xl">
               {isArabic ? descriptionAr : descriptionEn}
             </p>
           </div>
