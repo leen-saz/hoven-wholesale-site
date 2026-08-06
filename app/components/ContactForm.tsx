@@ -56,6 +56,33 @@ export default function ContactForm({ language, copy }: ContactFormProps) {
     }
   };
 
+  if (isSuccess) {
+    return (
+      <div className="min-h-96 flex items-center justify-center text-center">
+        <div className="space-y-6">
+          <div className="text-6xl">✓</div>
+          <h3 className="text-3xl font-bold text-white">
+            {language === 'ar' ? 'شكراً لك' : 'Thank You'}
+          </h3>
+          <p className="text-xl text-gray-200 max-w-md">
+            {copy.formSuccess}
+          </p>
+          <p className="text-sm text-gray-400">
+            {language === 'ar'
+              ? 'سيتم التواصل معك قريباً'
+              : 'We will contact you soon'}
+          </p>
+          <button
+            onClick={() => setIsSuccess(false)}
+            className="mt-6 px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition"
+          >
+            {language === 'ar' ? 'عودة' : 'Back'}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -119,18 +146,13 @@ export default function ContactForm({ language, copy }: ContactFormProps) {
         />
       </div>
 
-      <div className="flex items-center gap-4">
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="px-6 py-3 border border-white hover:bg-white hover:text-black transition disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {isSubmitting ? '...' : copy.formSubmit}
-        </button>
-        {isSuccess && (
-          <span className="text-green-400 text-sm">{copy.formSuccess}</span>
-        )}
-      </div>
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {isSubmitting ? '...' : copy.formSubmit}
+      </button>
     </form>
   );
 }
