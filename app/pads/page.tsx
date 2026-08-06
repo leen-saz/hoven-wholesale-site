@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import PadProductCard from "@/app/components/PadProductCard";
+import LinenProductCard from "@/app/components/LinenProductCard";
 import ContactForm from "@/app/components/ContactForm";
 import Navigation from "@/app/components/Navigation";
 import { mattressPads, copy } from "@/app/lib/products";
@@ -25,30 +25,35 @@ export default function Pads() {
         onLanguageChange={() => setLang(lang === "ar" ? "en" : "ar")}
       />
 
-      {/* Hero - Image Background with Overlay Text */}
-      <section
-        id="top"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage: "url(/products/pad-quilted.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
-        <div className="relative z-10 max-w-5xl mx-auto px-8 md:px-16 py-20 text-white">
-          <div className="space-y-6">
-            <p className="text-sm tracking-widest opacity-80 uppercase">{t.collection}</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              {lang === "ar" ? "لباد هوفن الفندقي" : "HOVEN Hotel Mattress Pads"}
-            </h1>
-            <p className="text-lg md:text-xl opacity-95 max-w-2xl leading-relaxed">
-              {lang === "ar"
-                ? "حماية شاملة مع راحة إضافية وارتفاع مثالي للمراتب"
-                : "Complete protection with added comfort and ideal height for mattresses"}
-            </p>
-          </div>
+      {/* Hero */}
+      <section id="top" className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/video/hero.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 text-center text-white px-4">
+          <p className="text-sm tracking-widest mb-4 opacity-75">{t.collection}</p>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 max-w-3xl mx-auto whitespace-pre-line">
+            {lang === "ar" ? "لباد هوفن الفندقي" : "HOVEN Hotel Pads"}
+          </h1>
+          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+            {lang === "ar"
+              ? "حماية متقدمة مع خامات فاخرة وتثبيت موثوق"
+              : "Advanced protection with premium materials and reliable fastening"}
+          </p>
+          <a
+            href="#pad-hoven"
+            className="inline-flex items-center gap-2 border border-white px-6 py-3 hover:bg-white hover:text-black transition"
+          >
+            {t.explore}
+          </a>
         </div>
       </section>
 
@@ -67,7 +72,7 @@ export default function Pads() {
       {/* Pads Grid */}
       <div className="pb-16 space-y-20 md:space-y-32">
         {mattressPads.map((pad) => (
-          <PadProductCard
+          <LinenProductCard
             key={pad.id}
             id={pad.id}
             image={pad.image}

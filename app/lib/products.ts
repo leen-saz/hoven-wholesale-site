@@ -113,32 +113,18 @@ export const bedLinens = [
 
 export const mattressPads = [
   {
-    id: "pad-quilted", image: "/products/pad-quilted.jpg", video: "hero", frameCount: 30, height: "14 سم",
-    name: { ar: "لباد هوفن المزدوج — راحة فاخرة بارتفاع 14 سم", en: "HOVEN Double Pad — Luxury Comfort at 14 cm Height" },
-    value: { ar: "حماية شاملة مع راحة إضافية وارتفاع مثالي للمراتب المزدوجة.", en: "Complete protection with added comfort and ideal height for double mattresses." },
-    feel: { ar: "ناعم وداعم", en: "Soft and supportive" },
-    line: { ar: "حوّل سريرك إلى مساحة نوم فاخرة مع دعم وحماية محسّنة.", en: "Transform your bed into a luxury sleep space with enhanced support and protection." },
-    intro: { ar: "راحة فاخرة مع حماية محسّنة بارتفاع 14 سم مثالي للأسرة المزدوجة.", en: "Luxury comfort with enhanced protection at perfect 14 cm height for double beds." },
+    id: "pad-hoven", image: "/products/pad.jpg", video: "hero", frameCount: 30, height: "متعدد",
+    name: { ar: "لباد هوفن الفندقي", en: "HOVEN Hotel Pad" },
+    value: { ar: "ميكروفايبر فاخر مع تثبيت آمن بمغاطات جانبية، تصنيع حسب الطلب.", en: "Premium microfiber with secure side magnets, custom-made to order." },
+    feel: { ar: "ناعم وفاخر", en: "Soft and luxurious" },
+    line: { ar: "حماية فندقية متقدمة بخامات عالية الجودة وتثبيت موثوق.", en: "Advanced hotel protection with premium materials and reliable fastening." },
+    intro: { ar: "لباد فندقي متميز مصنوع من ميكروفايبر ناعم الخارجي والداخلي مع حشوة ميكروفايبر متينة. مزود بمغاطات جانبية قوية لتثبيت آمن وثابت على المرتبة. يتوفر بارتفاعات مختلفة (8 سم، 14 سم، 21 سم) وتُصنع جميع القياسات والارتفاعات بناءً على الطلب لضمان الملاءمة المثالية لمشروعك.", en: "Premium hotel pad crafted from soft microfiber fabric both inside and out, with durable microfiber fill. Features strong side magnets for secure and stable mattress attachment. Available in multiple heights (8 cm, 14 cm, 21 cm) with all dimensions and heights customized to order for perfect fit to your project specifications." },
     layers: [
-      { ar: "ميكروفايبر ناعم عالي الجودة — ملمس فاخر", en: "Premium soft microfiber — luxury texture" },
-      { ar: "حشوة بوليستر متينة بارتفاع 14 سم", en: "Durable polyester fill at 14 cm height" },
-      { ar: "قاعدة مطاطية مرنة — تثبيت آمن على المرتبة", en: "Elastic rubber base — secure mattress fit" },
+      { ar: "ميكروفايبر خارجي ناعم فاخر", en: "Premium soft outer microfiber" },
+      { ar: "حشوة ميكروفايبر متينة", en: "Durable microfiber fill" },
+      { ar: "مغاطات جانبية قوية للتثبيت الآمن", en: "Strong side magnets for secure attachment" },
     ],
-    highlights: { ar: ["راحة استثنائية للسرير المزدوج", "ارتفاع مثالي 14 سم", "تحسين استواء المرتبة", "حماية محسّنة من التلف", "ميكروفايبر ناعم فاخر", "عمر طويل وأداء موثوق"], en: ["Exceptional comfort for double beds", "Perfect 14 cm height", "Improved mattress alignment", "Enhanced damage protection", "Premium soft microfiber", "Extended durability and reliability"] },
-  },
-  {
-    id: "pad-waterproof", image: "/products/pad-waterproof.jpg", video: "hero", frameCount: 30, height: "1.5 سم",
-    name: { ar: "لباد هوفن المقاوم للماء — حماية فعالة بدون سمك", en: "HOVEN Waterproof Pad — Effective Protection Without Bulk" },
-    value: { ar: "حماية 100% مقاومة للماء والسوائل والبقع، خفيف وسهل التنظيف.", en: "100% waterproof protection against liquids and stains, lightweight and easy-clean." },
-    feel: { ar: "خفيف وناعم", en: "Lightweight and soft" },
-    line: { ar: "حماية موثوقة للمرتبة دون إضافة سمك زائد أو شعور بثقل.", en: "Reliable mattress protection without added bulk or heavy feeling." },
-    intro: { ar: "حماية 100% من الماء والسوائل بدون سمك إضافي، خفيف وسهل التنظيف.", en: "100% waterproof protection without bulk, lightweight and easy to clean." },
-    layers: [
-      { ar: "ميكروفايبر ناعم — طبقة علوية مريحة وقابلة للتنظيف", en: "Soft microfiber — comfortable and cleanable top layer" },
-      { ar: "غشاء مقاوم للماء 100% — حماية كاملة من السوائل", en: "100% waterproof membrane — complete liquid protection" },
-      { ar: "قاعدة لا تنزلق من المطاط المرن", en: "Non-slip elastic rubber base" },
-    ],
-    highlights: { ar: ["حماية 100% من الماء والسوائل", "خفيف جداً بارتفاع 1.5 سم فقط", "سهل التنظيف والصيانة", "ثبات آمن على المرتبة", "مثالي للفنادق والمؤسسات", "أداء موثوق طويل الأمد"], en: ["100% waterproof and liquid-resistant", "Ultra-lightweight at 1.5 cm height", "Easy to clean and maintain", "Secure non-slip fit", "Ideal for hotels and institutions", "Proven long-term performance"] },
+    highlights: { ar: ["ميكروفايبر خارجي وداخلي فاخر", "حشوة ميكروفايبر متينة", "مغاطات جانبية للتثبيت الآمن", "ارتفاعات متعددة (8 / 14 / 21 سم)", "تصنيع جميع القياسات حسب الطلب", "أداء فندقي موثوق"], en: ["Premium microfiber exterior and interior", "Durable microfiber fill", "Strong side magnets for secure fastening", "Multiple heights (8 / 14 / 21 cm)", "All dimensions customized to order", "Proven hotel performance"] },
   },
 ];
 
