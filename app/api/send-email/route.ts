@@ -14,10 +14,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create a transporter using Gmail (you can replace with your email service)
+    // Create a transporter using Outlook/Office 365
     // For production, use environment variables for sensitive data
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: process.env.EMAIL_HOST || 'smtp-mail.outlook.com',
+      port: parseInt(process.env.EMAIL_PORT || '587'),
+      secure: false,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD,

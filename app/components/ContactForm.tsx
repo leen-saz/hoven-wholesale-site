@@ -25,6 +25,7 @@ export default function ContactForm({ language, copy }: ContactFormProps) {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -34,6 +35,7 @@ export default function ContactForm({ language, copy }: ContactFormProps) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
 
     try {
       const response = await fetch('/api/send-email', {
@@ -47,10 +49,13 @@ export default function ContactForm({ language, copy }: ContactFormProps) {
       if (response.ok) {
         setIsSuccess(true);
         setFormData({ name: '', email: '', phone: '', company: '', message: '' });
-        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        const data = await response.json();
+        setError(data.error || 'Failed to send message. Please try again.');
       }
     } catch (error) {
       console.error('Error sending email:', error);
+      setError('Connection error. Please check your internet and try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -153,6 +158,9 @@ export default function ContactForm({ language, copy }: ContactFormProps) {
       >
         {isSubmitting ? '...' : copy.formSubmit}
       </button>
+      {error && (
+        <p className="text-red-400 text-sm">{error}</p>
+      )}
     </form>
   );
 }
