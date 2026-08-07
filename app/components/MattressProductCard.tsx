@@ -65,8 +65,8 @@ export default function MattressProductCard({
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
 
       {/* Text Overlay */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 py-16 text-white">
-        <div className="space-y-6">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-12 py-8 md:py-16 text-white">
+        <div className="space-y-3 md:space-y-6">
           {/* Product name */}
           <div>
             <h2 className="text-3xl lg:text-5xl font-bold mb-2">
