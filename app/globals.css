@@ -151,7 +151,7 @@ header button:hover {
   }
 }
 
-/* Responsive */
+/* Mobile Optimization for Backgrounds & Videos */
 @media (max-width: 768px) {
   html {
     font-size: 14px;
@@ -159,5 +159,35 @@ header button:hover {
 
   header {
     font-size: 12px;
+  }
+
+  /* Disable fixed backgrounds on mobile - prevents performance issues */
+  section[style*="backgroundAttachment"] {
+    background-attachment: scroll !important;
+  }
+
+  /* Optimize background images for mobile */
+  section[style*="backgroundImage"] {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Video optimization for mobile */
+  video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Hero sections - responsive height */
+  section.relative.h-screen {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  section.relative.min-h-screen {
+    min-height: 100vh;
   }
 }
