@@ -12,6 +12,12 @@ export default function Pads() {
   const t = copy[lang];
 
   useEffect(() => {
+    const saved = localStorage.getItem("language-pads") as Lang | null;
+    if (saved) setLang(saved);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("language-pads", lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   }, [lang]);

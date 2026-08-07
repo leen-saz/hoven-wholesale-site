@@ -113,7 +113,7 @@ export const bedLinens = [
 
 export const mattressPads = [
   {
-    id: "pad-hoven", image: "/products/pad.jpg", video: "hero", frameCount: 30, height: "متعدد",
+    id: "pad-hoven", image: "/products/pad.jpg", video: "hero", frameCount: 30, height: "8 سم · 14 سم · 21 سم",
     name: { ar: "لباد هوفن الفندقي", en: "HOVEN Hotel Pad" },
     value: { ar: "ميكروفايبر فاخر مع تثبيت آمن بمغاطات جانبية، تصنيع حسب الطلب.", en: "Premium microfiber with secure side magnets, custom-made to order." },
     feel: { ar: "ناعم وفاخر", en: "Soft and luxurious" },
@@ -133,7 +133,7 @@ export const copy = {
     collection: "منتجات هوفن قسم مبيعات الجملة", menu: "تواصل", switch: "EN", hero: "مزيج الجودة مع\nالسعر والموثوقية",
     heroBody: "مجموعة شاملة من المراتب والوسائد والمفروشات واللباد للفنادق، والمشاريع السكنية، ومتاجر الأثاث التي تبحث عن جودة يمكن الوثوق بها.", explore: "اكتشف المجموعة",
     layerTitle: "طبقات المنتج", layerHint: "تظهر المواصفات بعد اكتمال الحركة", height: "المقاس", feel: "الإحساس", layersCount: "عدد الطبقات", benefits: "المزايا بعد اكتمال الطبقات",
-    wholesale: "مصمم للأعمال", wholesaleTitle: "شريك الراحة\nلمشروعك القادم.", wholesaleBody: "ضمان ٧ سنوات · توريد إلى جميع مناطق المملكة · مدة التجهيز ١٥ يومًا وتختلف حسب الكمية.",
+    wholesale: "مصمم للأعمال", wholesaleTitle: "شريك الراحة\nلمشروعك القادم.", wholesaleBody: "ضمان ٧ سنوات · توريد إلى جميع مناطق المملكة · الأسعار حسب الكمية (تفاصيل عند التواصل) · الشحن والتسليم حسب الكمية · معايير جودة دولية ISO · مدة التجهيز ١٥ يومًا وتختلف حسب الكمية.",
     contact: "لنصنع راحة أفضل", contactTitle: "لنبدأ الحديث عن\nمشروعك القادم.", top: "للأعلى", label: "المجموعة",
     mattresses: "المراتب الفندقية", pillows: "الوسائد الفندقية", linens: "المفروشات الفندقية", pads: "لباد المراتب",
     formName: "الاسم", formEmail: "البريد الإلكتروني", formPhone: "الهاتف", formCompany: "اسم المشروع", formMessage: "الرسالة", formSubmit: "أرسل الطلب", formSuccess: "تم إرسال طلبك بنجاح!",
@@ -142,7 +142,7 @@ export const copy = {
     collection: "HOVEN WHOLESALE COLLECTION · 2026", menu: "Contact", switch: "ع", hero: "Comfort made\nfor your projects.",
     heroBody: "A comprehensive collection of mattresses, pillows, linens, and pads for hospitality, residences, and retail partners seeking quality they can rely on.", explore: "Explore collection",
     layerTitle: "Product layers", layerHint: "Specifications reveal when the motion is complete", height: "Size", feel: "Feel", layersCount: "Layer count", benefits: "Benefits revealed after every layer",
-    wholesale: "BUILT FOR BUSINESS", wholesaleTitle: "A comfort partner\nfor your next project.", wholesaleBody: "7-year warranty · Delivery across Saudi Arabia · 15-day preparation time, varying by order quantity.",
+    wholesale: "BUILT FOR BUSINESS", wholesaleTitle: "A comfort partner\nfor your next project.", wholesaleBody: "7-year warranty · Delivery across Saudi Arabia · Pricing by quantity (details via WhatsApp) · Shipping & delivery based on order size · ISO quality standards · 15-day preparation time, varying by order quantity.",
     contact: "LET'S BUILD BETTER REST", contactTitle: "Let's talk about\nyour next project.", top: "Back to top", label: "THE COLLECTION",
     mattresses: "Hotel Mattresses", pillows: "Hotel Pillows", linens: "Hotel Linens", pads: "Mattress Pads",
     formName: "Name", formEmail: "Email", formPhone: "Phone", formCompany: "Project Name", formMessage: "Message", formSubmit: "Send Request", formSuccess: "Your request has been sent successfully!",

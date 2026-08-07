@@ -14,6 +14,12 @@ export default function Home() {
   const t = copy[lang];
 
   useEffect(() => {
+    const saved = localStorage.getItem("language-home") as Lang | null;
+    if (saved) setLang(saved);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("language-home", lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   }, [lang]);

@@ -24,11 +24,11 @@ export default function Navigation({ currentPage, language, onLanguageChange }: 
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div className={`max-w-7xl mx-auto px-4 py-4 flex items-center ${isArabic ? "flex-row-reverse" : ""}`}>
         <Link href="/" className="flex-shrink-0">
-          <img src="/hoven-logo-white.png" alt="HOVEN" className="h-8 w-auto" />
+          <img src="/hoven-logo-white.png" alt="HOVEN" className="h-14 w-auto" />
         </Link>
-        <nav className="flex items-center gap-6 text-white">
+        <nav className={`flex items-center gap-8 text-white ${isArabic ? "flex-row-reverse" : ""}`}>
           {links.map((link) => (
             <Link
               key={link.href}

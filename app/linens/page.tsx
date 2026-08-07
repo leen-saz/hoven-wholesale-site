@@ -12,6 +12,12 @@ export default function Linens() {
   const t = copy[lang];
 
   useEffect(() => {
+    const saved = localStorage.getItem("language-linens") as Lang | null;
+    if (saved) setLang(saved);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("language-linens", lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   }, [lang]);

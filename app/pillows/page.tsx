@@ -12,6 +12,12 @@ export default function Pillows() {
   const t = copy[lang];
 
   useEffect(() => {
+    const saved = localStorage.getItem("language-pillows") as Lang | null;
+    if (saved) setLang(saved);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("language-pillows", lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   }, [lang]);
