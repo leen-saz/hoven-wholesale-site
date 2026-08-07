@@ -38,7 +38,7 @@ export default function Pillows() {
           backgroundImage: "url(/products/pillow-premium.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed",
+          backgroundAttachment: "scroll",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
@@ -94,7 +94,7 @@ export default function Pillows() {
       </div>
 
       {/* Wholesale */}
-      <section className="py-16 md:py-24 bg-cover bg-center" style={{ backgroundImage: 'url("/products/wholesale-bg.jpg")', backgroundAttachment: 'fixed' }}>
+      <section className="py-16 md:py-24 bg-cover bg-center" style={{ backgroundImage: 'url("/products/wholesale-bg.jpg")', backgroundAttachment: 'scroll' }}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <p className="text-sm tracking-widest text-gray-500 mb-4">{t.wholesale}</p>

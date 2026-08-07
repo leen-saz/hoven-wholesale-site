@@ -37,8 +37,9 @@ export default function Pads() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: "center" }}
         >
           <source src="/video/hero.mp4" type="video/mp4" />
         </video>
@@ -99,7 +100,7 @@ export default function Pads() {
       </div>
 
       {/* Wholesale */}
-      <section className="py-16 md:py-24 bg-cover bg-center" style={{ backgroundImage: 'url("/products/wholesale-bg.jpg")', backgroundAttachment: 'fixed' }}>
+      <section className="py-16 md:py-24 bg-cover bg-center" style={{ backgroundImage: 'url("/products/wholesale-bg.jpg")', backgroundAttachment: 'scroll' }}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <p className="text-sm tracking-widest text-gray-500 mb-4">{t.wholesale}</p>
