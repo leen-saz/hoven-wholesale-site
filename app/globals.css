@@ -41,6 +41,7 @@
 html {
   background: var(--cream);
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -154,11 +155,11 @@ header button:hover {
 /* Mobile Optimization for Backgrounds & Videos */
 @media (max-width: 768px) {
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   header {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   /* Disable fixed backgrounds on mobile - prevents performance issues */
