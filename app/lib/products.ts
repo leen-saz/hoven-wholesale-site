@@ -113,7 +113,7 @@ export const bedLinens = [
 
 export const mattressPads = [
   {
-    id: "pad-hoven", image: "/products/pad.jpg", video: "hero", frameCount: 30, height: "8 سم\n14 سم\n21 سم",
+    id: "pad-hoven", image: "/products/pad.jpg", video: "hero", frameCount: 30, height: ["8 سم", "14 سم", "21 سم"].join("\n"),
     name: { ar: "لباد هوفن الفندقي", en: "HOVEN Hotel Pad" },
     value: { ar: "ميكروفايبر فاخر مع تثبيت آمن بمغاطات جانبية، تصنيع حسب الطلب.", en: "Premium microfiber with secure side magnets, custom-made to order." },
     feel: { ar: "ناعم وفاخر", en: "Soft and luxurious" },
