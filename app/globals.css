@@ -83,6 +83,29 @@ h3 {
   letter-spacing: -0.035em;
 }
 
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Labels and small text */
+.text-sm {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
 /* Header */
 header {
   background: rgba(0, 0, 0, 0.4);
