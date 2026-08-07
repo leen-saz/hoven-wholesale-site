@@ -110,14 +110,14 @@ export default function PillowProductCard({
           </div>
 
           {/* Highlights */}
-          <div className="flex flex-wrap gap-2 pt-4">
+          <div className="space-y-2 pt-4">
             {(isArabic ? highlightsAr : highlightsEn).map((highlight, idx) => (
-              <span
+              <div
                 key={idx}
-                className="px-3 py-1.5 bg-white/20 text-white text-sm font-medium rounded-full border border-white/40"
+                className="px-4 py-3 backdrop-blur-xl bg-white/10 border border-white/20 rounded-lg text-white text-sm font-medium hover:bg-white/30 transition text-center"
               >
                 {highlight}
-              </span>
+              </div>
             ))}
           </div>
         </div>

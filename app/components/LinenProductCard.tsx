@@ -60,15 +60,15 @@ export default function LinenProductCard({
         <div className="absolute inset-0 bg-black/40" />
 
         {/* Description overlay */}
-        <div className={`absolute z-10 top-12 px-8 md:px-16 max-w-2xl text-white ${alignRight ? (isArabic ? 'right-0' : 'left-0') : 'left-0 right-0 mx-auto text-center'}`}>
+        <div className="absolute z-10 inset-0 flex items-center justify-center px-8 md:px-16 text-white">
           <div className="space-y-6">
-            <h2 className="text-3xl lg:text-4xl font-bold leading-snug">
+            <h2 className="text-3xl lg:text-4xl font-bold leading-snug text-center">
               {isArabic ? nameAr : nameEn}
             </h2>
-            <p className="text-lg text-gray-100 leading-relaxed">
+            <p className="text-lg text-gray-100 leading-relaxed text-center">
               {isArabic ? taglineAr : taglineEn}
             </p>
-            <p className="text-lg md:text-xl leading-loose">
+            <p className="text-lg md:text-xl leading-loose text-center">
               {isArabic ? descriptionAr : descriptionEn}
             </p>
           </div>
@@ -85,7 +85,7 @@ export default function LinenProductCard({
                 <p className="text-sm text-gray-500 mb-1">
                   {isArabic ? 'الارتفاع' : 'Height'}
                 </p>
-                <p className="text-2xl font-semibold text-gray-900">{heightCm}</p>
+                <p className="text-2xl font-semibold text-gray-900 whitespace-pre-line">{heightCm}</p>
               </div>
               <div>
                 <p className="text-sm text-gray-500 mb-1">
@@ -115,14 +115,14 @@ export default function LinenProductCard({
         </div>
 
         {/* Highlights */}
-        <div className="flex flex-wrap gap-2 pt-8 mt-8 border-t border-gray-200">
+        <div className="space-y-2 pt-8 mt-8 border-t border-gray-200">
           {(isArabic ? highlightsAr : highlightsEn).map((highlight, idx) => (
-            <span
+            <div
               key={idx}
-              className="px-3 py-1.5 bg-gray-100 text-gray-800 text-sm font-medium rounded-full"
+              className="px-4 py-3 backdrop-blur-xl bg-white/10 border border-white/20 rounded-lg text-gray-800 text-sm font-medium hover:bg-white/30 transition text-center"
             >
               {highlight}
-            </span>
+            </div>
           ))}
         </div>
       </div>

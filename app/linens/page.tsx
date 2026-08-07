@@ -30,14 +30,21 @@ export default function Linens() {
         onLanguageChange={() => setLang(lang === "ar" ? "en" : "ar")}
       />
 
-      {/* Hero - Image Background with Overlay Text */}
+      {/* Hero */}
       <section
         id="top"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-fixed"
-        style={{
-          backgroundImage: 'url("/products/sheets-sateen.jpg")',
-        }}
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
       >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/video/hero.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-l from-black/70 to-black/40" />
         <div className="relative z-10 max-w-5xl mx-auto px-8 md:px-16 py-20 text-white text-center" dir={lang === "ar" ? "rtl" : "ltr"}>
           <div className="space-y-6">
@@ -55,7 +62,7 @@ export default function Linens() {
       </section>
 
       {/* Collection Intro */}
-      <section className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+      <section className="max-w-7xl mx-auto px-4 py-16 md:py-24 text-center">
         <p className="text-sm tracking-widest text-gray-500 mb-4">{t.label}</p>
         <h2 className="text-4xl md:text-5xl font-bold">
           {lang === "ar" ? (
@@ -90,13 +97,24 @@ export default function Linens() {
       </div>
 
       {/* Wholesale */}
-      <section className="py-16 md:py-24" style={{ backgroundColor: '#F5F2E9' }}>
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-sm tracking-widest text-gray-500 mb-4">{t.wholesale}</p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 whitespace-pre-line">
-            {t.wholesaleTitle}
-          </h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">{t.wholesaleBody}</p>
+      <section className="py-16 md:py-24 bg-cover bg-center" style={{ backgroundImage: 'url("/products/wholesale-bg.jpg")', backgroundAttachment: 'fixed' }}>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <p className="text-sm tracking-widest text-gray-500 mb-4">{t.wholesale}</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 whitespace-pre-line">
+              {t.wholesaleTitle}
+            </h2>
+          </div>
+          <div className="max-w-2xl mx-auto space-y-3">
+            {t.wholesalePoints.map((point, idx) => (
+              <div
+                key={idx}
+                className="px-4 py-3 backdrop-blur-xl bg-white/15 border border-white/25 rounded-lg text-gray-800 text-sm font-medium hover:bg-white/50 transition text-center"
+              >
+                {point}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -109,12 +127,12 @@ export default function Linens() {
             {t.contactTitle}
           </h2>
           <a
-            href="https://wa.me/0557227180"
+            href="https://wa.me/0505130111"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-white px-6 py-3 hover:bg-white hover:text-black transition mb-8"
           >
-            {lang === "ar" ? "واتس" : "WhatsApp"}
+            {lang === "ar" ? "تواصل عبر WhatsApp" : "Contact via WhatsApp"}
           </a>
           <div className="mt-12">
             <a href="#top" className="text-sm opacity-75 hover:opacity-100 transition">

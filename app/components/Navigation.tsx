@@ -23,20 +23,16 @@ export default function Navigation({ currentPage, language, onLanguageChange }: 
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-sm" dir="ltr">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <button
           onClick={onLanguageChange}
-          className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-white transition text-sm text-white"
+          className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-white transition text-sm text-white flex-shrink-0"
           aria-label="Change language"
         >
           {isArabic ? "EN" : "ع"}
         </button>
-        <div className="flex items-center gap-8">
-          <Link href="/" className="flex-shrink-0">
-            <img src="/hoven-logo-white.png" alt="HOVEN" className="h-14 w-auto" />
-          </Link>
-          <nav className={`flex items-center gap-8 text-white ${isArabic ? "flex-row-reverse" : ""}`}>
+        <nav className={`flex items-center justify-center gap-8 text-white ${isArabic ? "flex-row-reverse" : ""}`} dir={isArabic ? "rtl" : "ltr"}>
           {links.map((link) => (
             <Link
               key={link.href}
@@ -52,7 +48,9 @@ export default function Navigation({ currentPage, language, onLanguageChange }: 
             {labels[language].contact}
           </a>
         </nav>
-        </div>
+        <Link href="/" className="flex-shrink-0">
+          <img src="/hoven-logo-white.png" alt="HOVEN" className="h-14 w-auto" />
+        </Link>
       </div>
     </header>
   );

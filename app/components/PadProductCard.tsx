@@ -107,14 +107,14 @@ export default function PadProductCard({
             </div>
 
             {/* Highlights */}
-            <div className="flex flex-wrap gap-2 pt-4">
+            <div className="space-y-2 pt-4">
               {(isArabic ? highlightsAr : highlightsEn).map((highlight, idx) => (
-                <span
+                <div
                   key={idx}
-                  className="px-3 py-1.5 bg-gray-100 text-gray-800 text-sm font-medium rounded-full"
+                  className="px-4 py-3 backdrop-blur-xl bg-white/10 border border-white/20 rounded-lg text-gray-800 text-sm font-medium hover:bg-white/30 transition text-center"
                 >
                   {highlight}
-                </span>
+                </div>
               ))}
             </div>
           </div>
