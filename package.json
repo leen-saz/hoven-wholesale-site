@@ -12,6 +12,7 @@
     "lint": "eslint . --ignore-pattern .next"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "drizzle-orm": "0.45.2",
     "next": "16.2.6",
     "nodemailer": "^6.9.7",
