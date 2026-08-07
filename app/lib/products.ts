@@ -96,7 +96,7 @@ export const pillows = [
 
 export const bedLinens = [
   {
-    id: "sheets-sateen", image: "/products/sheets-sateen.jpg", video: "hero", frameCount: 30, height: "نفرين 240×260 سم\nنفر ونص 200×240 سم\nنفر 180×200 سم",
+    id: "sheets-sateen", image: "/products/sheets-sateen.jpg", video: "hero", frameCount: 30, height: { ar: "نفرين 240×260 سم\nنفر ونص 200×240 سم\nنفر 180×200 سم", en: "Double 240×260 cm\nDouble & Half 200×240 cm\nSingle 180×200 cm" },
     name: { ar: "مفروشات هوفن الفندقية ميكروفايبر فندقي", en: "HOVEN Hotel Linens Hotel Microfiber" },
     value: { ar: "ميكروفايبر فندقي عالي الجودة بملمس حريري ناعم ومتانة استثنائية للغسيل المكثف", en: "Premium hotel microfiber with silky soft texture and exceptional durability for heavy washing cycles" },
     feel: { ar: "ناعم جداً وفاخر", en: "Ultra-soft and luxurious" },
@@ -113,7 +113,7 @@ export const bedLinens = [
 
 export const mattressPads = [
   {
-    id: "pad-hoven", image: "/products/pad.jpg", video: "hero", frameCount: 30, height: "21 سم\n14 سم\n8 سم",
+    id: "pad-hoven", image: "/products/pad.jpg", video: "hero", frameCount: 30, height: { ar: "21 سم\n14 سم\n8 سم", en: "21 cm\n14 cm\n8 cm" },
     name: { ar: "لباد هوفن الفندقي", en: "HOVEN Hotel Pad" },
     value: { ar: "ميكروفايبر فاخر مع مغاطات جانبية قوية يضمن تثبيتاً آمناً وثابتاً لمدة طويلة، يحتفظ بأداءه طول العمر", en: "Premium microfiber with strong side magnets ensures secure and stable fastening for extended periods, maintains performance throughout its lifetime" },
     feel: { ar: "ناعم وفاخر", en: "Soft and luxurious" },

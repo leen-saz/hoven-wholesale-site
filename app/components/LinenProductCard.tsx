@@ -12,7 +12,7 @@ interface LinenProductCardProps {
   taglineEn: string;
   descriptionAr: string;
   descriptionEn: string;
-  heightCm: string;
+  heightCm: string | { ar: string; en: string };
   feel: string;
   layers: Layer[];
   highlightsAr: string[];
@@ -85,7 +85,7 @@ export default function LinenProductCard({
                 <p className="text-sm text-gray-500 mb-1">
                   {isArabic ? 'الارتفاع' : 'Height'}
                 </p>
-                <p className="text-2xl font-semibold text-gray-900 whitespace-pre-line">{heightCm}</p>
+                <p className="text-2xl font-semibold text-gray-900 whitespace-pre-line">{typeof heightCm === 'string' ? heightCm : (isArabic ? heightCm.ar : heightCm.en)}</p>
               </div>
               <div>
                 <p className="text-sm text-gray-500 mb-1">
