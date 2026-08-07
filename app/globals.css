@@ -38,6 +38,7 @@
   color-scheme: light dark;
 }
 
+/* Desktop - Larger fonts */
 html {
   background: var(--cream);
   scroll-behavior: smooth;
@@ -176,14 +177,40 @@ header button:hover {
   }
 }
 
-/* Mobile Optimization for Backgrounds & Videos */
+/* Mobile Optimization - Smaller fonts for mobile */
 @media (max-width: 768px) {
   html {
-    font-size: 18px;
+    font-size: 14px;
+  }
+
+  body {
+    font-weight: 400;
   }
 
   header {
-    font-size: 16px;
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+
+  .text-sm {
+    font-size: 0.9rem;
+    font-weight: 400;
   }
 
   /* Disable fixed backgrounds on mobile - prevents performance issues */

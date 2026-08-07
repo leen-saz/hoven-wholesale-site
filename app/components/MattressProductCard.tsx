@@ -40,7 +40,7 @@ export default function MattressProductCard({
 }: MattressProductCardProps) {
   const isArabic = language === 'ar';
   const dir = isArabic ? 'rtl' : 'ltr';
-  const videoUrl = `/videos/${video}.mp4`;
+  const videoUrl = `/video/${video}.mp4`;
 
   return (
     <section
