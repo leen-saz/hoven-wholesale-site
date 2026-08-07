@@ -79,7 +79,11 @@ export default function PadProductCard({
                 <p className="text-sm text-gray-500 mb-1">
                   {isArabic ? 'الارتفاع' : 'Height'}
                 </p>
-                <p className="text-2xl font-semibold text-gray-900 whitespace-pre-line">{heightCm}</p>
+                <div className="text-2xl font-semibold text-gray-900 space-y-1">
+                  {heightCm.split('\n').map((line: string, i: number) => (
+                    <div key={i}>{line}</div>
+                  ))}
+                </div>
               </div>
               <div>
                 <p className="text-sm text-gray-500 mb-1">
