@@ -40,20 +40,27 @@ export default function MattressProductCard({
 }: MattressProductCardProps) {
   const isArabic = language === 'ar';
   const dir = isArabic ? 'rtl' : 'ltr';
-  const frameImage = `/frames/${video}/frame-0001.jpg`;
+  const videoUrl = `/videos/${video}.mp4`;
 
   return (
     <section
       id={id}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `url('${frameImage}')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
       dir={dir}
     >
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: "center" }}
+      >
+        <source src={videoUrl} type="video/mp4" />
+      </video>
+
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/50" />
 
